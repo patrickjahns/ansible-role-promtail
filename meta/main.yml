@@ -1,0 +1,28 @@
+galaxy_info:
+  author: Patrick Jahns
+  description: Deploy (loki) promtail
+  role_name: promtail
+  company: none
+  license: MIT
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - xenial
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+  galaxy_tags:
+    - promtail
+    - loki
+    - logging
+    - collector
+    - monitoring
+    - metrics
+    - system
+    - grafana
+    - prometheus
+
+dependencies: []

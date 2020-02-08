@@ -1,0 +1,21 @@
+#jinja2: trim_blocks: True, lstrip_blocks: True
+{{ ansible_managed | comment }}
+# https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md
+server:
+  {{ promtail_config_server | to_nice_yaml(indent=2) | indent(2, False) }}
+
+{% if promtail_config_positions != {} %}
+positions:
+  {{ promtail_config_positions | to_nice_yaml(indent=2) | indent(2, False) }}
+{% endif %}
+
+clients:
+  {{ promtail_config_clients | to_nice_yaml(indent=2) | indent(2, False) }}
+
+scrape_configs:
+  {{ promtail_config_scrap_configs | to_nice_yaml(indent=2) | indent(2, False) }}
+
+{% if promtail_target_config != {} %}
+target_config:
+  {{ promtail_target_config | to_nice_yaml(indent=2) | indent(2, False) }}
+{% endif %}
