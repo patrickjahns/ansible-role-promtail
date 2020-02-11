@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Patrick Jahns
   description: Deploy (loki) promtail

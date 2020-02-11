@@ -1,36 +1,36 @@
 ---
-- name: ensure unzip package is available
+- name: Ensure unzip package is available
   package:
     name: unzip
     state: present
     update_cache: true
 
-- name: create promtail group
+- name: Create promtail group
   group:
     name: "{{ promtail_system_group }}"
     state: present
-    system: true
+    system: True
   when: promtail_system_group != "root"
 
-- name: create the promtail user
+- name: Create the promtail user
   user:
     name: "{{ promtail_system_user }}"
     group: "{{ promtail_system_group }}"
     groups: "{{ promtail_user_additional_groups }}"
-    append: true
+    append: True
     shell: /usr/sbin/nologin
-    system: true
-    createhome: false
+    system: True
+    createhome: False
     home: /
   when: promtail_system_user != "root"
 
-- name: ensure /usr/local/bin exists
+- name: Ensure /usr/local/bin exists
   file:
     path: /usr/local/bin
     state: directory
     mode: 0755
 
-- name: create config dir
+- name: Create config dir
   file:
     path: "{{ item }}"
     state: directory
@@ -40,7 +40,7 @@
   with_items:
     - "{{ promtail_config_dir }}"
 
-- name: create application dirs
+- name: Create application dirs
   file:
     path: "{{ item }}"
     state: directory
@@ -51,30 +51,30 @@
     - "{{ promtail_install_dir }}"
     - "{{ promtail_install_dir }}/{{ promtail_version }}"
 
-- name: check promtail binary
+- name: Check promtail binary
   stat:
     path: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-amd64"
   register: promtail_binary
 
-- name: download promtail binaries
+- name: Download promtail binaries
   get_url:
     url: "{{ promtail_dist_url }}"
     dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-amd64.zip"
-    force: true
+    force: True
     checksum: "sha256:{{ __promtail_checksum }}"
   when: not promtail_binary.stat.exists
 
-- name: unpack promtail binaries
+- name: Unpack promtail binaries
   ignore_errors: "{{ ansible_check_mode }}"
   unarchive:
     src: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-amd64.zip"
     dest: "{{ promtail_install_dir }}/{{ promtail_version }}"
     creates: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-amd64"
-    remote_src: true
+    remote_src: True
 
-- name: create symlink to latest version
+- name: Create symlink to latest version
   notify:
-    - restart promtail
+    - Restart promtail
   ignore_errors: "{{ ansible_check_mode }}"
   file:
     state: link
@@ -82,18 +82,18 @@
     dest: /usr/local/bin/promtail
     mode: 0755
 
-- name: write config
+- name: Write config
   notify:
-    - restart promtail
+    - Restart promtail
   template:
     src: config.j2
     dest: "{{ promtail_config_file }}"
     owner: root
     group: "{{ promtail_system_group }}"
 
-- name: create systemd service unit
+- name: Create systemd service unit
   notify:
-    - restart promtail
+    - Restart promtail
   template:
     src: service.j2
     dest: /etc/systemd/system/promtail.service
