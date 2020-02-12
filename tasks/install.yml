@@ -3,7 +3,7 @@
   package:
     name: unzip
     state: present
-    update_cache: true
+    update_cache: True
 
 - name: Create promtail group
   group:
