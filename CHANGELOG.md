@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.1.0) (2020-03-01)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.0.1...1.1.0)
+
+**Implemented enhancements:**
+
+- feat: specify the log level for promtail [\#7](https://github.com/patrickjahns/ansible-role-promtail/pull/7) ([patrickjahns](https://github.com/patrickjahns))
+
+**Merged pull requests:**
+
+- Updated repository settings and added release automation [\#5](https://github.com/patrickjahns/ansible-role-promtail/pull/5) ([patrickjahns](https://github.com/patrickjahns))
+- added ansible-later for more indepth static code analysis [\#3](https://github.com/patrickjahns/ansible-role-promtail/pull/3) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.0.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.0.1) (2020-02-09)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.0.0...1.0.1)
