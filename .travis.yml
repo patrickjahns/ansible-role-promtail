@@ -6,7 +6,7 @@ python:
 
 env:
   matrix:
-    - ANSIBLE: 2.7
+    #- ANSIBLE: 2.7
     - ANSIBLE: 2.8
     - ANSIBLE: 2.9
     - MOLECULE_DISTRO: ubuntu1804
