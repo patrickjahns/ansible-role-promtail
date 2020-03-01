@@ -8,6 +8,8 @@
 ## Description
 
 Deploy [promtail](https://github.com/grafana/loki) using ansible.
+For recent changes, please check the [CHANGELOG](/CHANGELOG.md) or have a look at [github releases](https://github.com/patrickjahns/ansible-role-promtail/releases)
+
 
 ## Requirements
 
