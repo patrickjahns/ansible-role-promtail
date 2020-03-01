@@ -11,6 +11,9 @@ promtail_user_additional_groups: "adm"
 promtail_install_dir: /opt/promtail
 promtail_tmp_dir: /tmp
 
+promtail_log_level: info
+# One of: debug, info, warn, error
+
 promtail_config_server:
   http_listen_port: 9080
 
