@@ -3,6 +3,7 @@ ignore: |
   .travis/
   .travis.yml
   .github/
+  .tox
   meta/
 
 rules:
@@ -28,4 +29,3 @@ rules:
   brackets:
     min-spaces-inside-empty: 0
     max-spaces-inside-empty: 1
-
