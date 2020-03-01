@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: ansible-later
-      uses: patrickjahns/ansible-later-action@master
+      uses: patrickjahns/ansible-later-action@v1
       with:
         config: ".later.yml"
         path: "**/*.yml"
