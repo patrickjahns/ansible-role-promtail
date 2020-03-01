@@ -15,6 +15,7 @@ repository:
   allow_squash_merge: true
   allow_merge_commit: true
   allow_rebase_merge: true
+  delete_branch_on_merge: true
 
 labels:
   - name: bug
@@ -44,6 +45,30 @@ labels:
   - name: wontfix
     color: ffffff
     description: This will not be worked on
+  - name: dependencies
+    color: 0366d6
+    description: Pull requests that update a dependency file
+  - name: security
+    description: Security relevant changes
+    color: efc04a
+  - name: removed
+    description: Functionality that has been removed
+    color: e0b862
+  - name: deprecation
+    description: Functionality that has been deprecated
+    color: f9f99d
+  - name: changed
+    description: Functionality that has been changed
+    color: 3ed678
+  - name: semver:patch
+    color: 834dd1
+    description: Change leading to a patch level version bump
+  - name: semver:minor
+    color: 764ab5
+    description: Change leading to a minor level version bump
+  - name: semver:major
+    color: 6b3bad
+    description: A (breaking) change leading to a major version bump
 
 branches:
   - name: master

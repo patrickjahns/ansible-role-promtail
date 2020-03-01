@@ -1,0 +1,47 @@
+name: changelog and release automation
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[RELEASE]')"
+    steps:
+      - uses: actions/checkout@master
+      - name: calculate next version
+        id: version
+        uses: patrickjahns/version-drafter-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: update changelog
+        uses: patrickjahns/chlgr@v1
+        with:
+          release-version: ${{ steps.version.outputs.next-version }}
+
+  release:
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[RELEASE]')"
+    steps:
+      - uses: actions/checkout@master
+      - name: extract version from commit message
+        shell: bash
+        run: |
+          VERSION=$(echo "${COMMIT_MSG}" | grep -Po '\d.\d.\d')
+          CHANGELOG=$(cat CHANGELOG.md | grep -Pzo '(?s)##.*?##')
+          CHANGELOG="${CHANGELOG%??}"
+          CHANGELOG="${CHANGELOG//'%'/'%25'}"
+          CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
+          CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
+          echo "::set-output name=version::${VERSION}"
+          echo "::set-output name=changelog::${CHANGELOG}"
+        env:
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        id: version
+      - uses: avakar/tag-and-release@v1
+        with:
+          body: ${{ steps.version.outputs.changelog }}
+          tag_name: ${{ steps.version.outputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
