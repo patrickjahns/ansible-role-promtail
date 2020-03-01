@@ -1,0 +1,25 @@
+---
+rules:
+  exclude_files:
+    - .github
+    - molecule
+  exclude_filter:
+    - LINT0009
+    - ANSIBLE0015
+  ignore_dotfiles: True
+
+# based on ansible-galaxy rules
+yamllint:
+  braces: {max-spaces-inside: 1, level: error}
+  colons: {max-spaces-after: -1, level: error}
+  commas: {max-spaces-after: -1, level: error}
+  comments: disable
+  comments-indentation: disable
+  empty-lines: {max: 3, level: error}
+  hyphens: {level: error}
+  key-duplicates: enable
+  line-length: disable
+  new-line-at-end-of-file: disable
+  new-lines: {type: unix}
+  trailing-spaces: disable
+  truthy: disable

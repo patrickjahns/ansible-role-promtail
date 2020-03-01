@@ -5,18 +5,18 @@
     - promtail
 
 - include: install.yml
-  become: true
+  become: True
   tags:
     - promtail_install
     - promtail
 
-- name: ensure promtail service is started and enabled
-  become: true
+- name: Ensure promtail service is started and enabled
+  become: True
   systemd:
-    daemon_reload: true
+    daemon_reload: True
     name: promtail
     state: started
-    enabled: true
+    enabled: True
   tags:
     - promtail_run
     - promtail

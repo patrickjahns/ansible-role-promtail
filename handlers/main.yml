@@ -1,9 +1,9 @@
 ---
-- name: restart promtail
+- name: Restart promtail
   systemd:
     name: promtail
     state: restarted
-    daemon_reload: true
+    daemon_reload: True
   tags:
     - promtail_run
     - promtail
