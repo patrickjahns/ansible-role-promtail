@@ -58,4 +58,4 @@ def test_grpc_socket(host):
 def test_version(host, AnsibleDefaults):
     version = os.getenv('PROMTAIL', AnsibleDefaults['promtail_version'])
     out = host.run("/usr/local/bin/promtail --version").stdout
-    assert "promtail, version v" + version in out
+    assert "promtail, version " + version in out
