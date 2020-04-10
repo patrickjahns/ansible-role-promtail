@@ -25,8 +25,8 @@ promtail_config_positions: {}
 #  promtail_config_positions:
 #    filename: /tmp/positions.yaml
 
-promtail_config_scrap_configs: []
-#  promtail_config_scrap_configs:
+promtail_config_scrape_configs: []
+#  promtail_config_scrape_configs:
 #    - job_name: system
 #      entry_parser: raw
 #      static_configs:

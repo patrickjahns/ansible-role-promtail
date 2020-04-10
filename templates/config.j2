@@ -13,7 +13,7 @@ clients:
   {{ promtail_config_clients | to_nice_yaml(indent=2) | indent(2, False) }}
 
 scrape_configs:
-  {{ promtail_config_scrap_configs | to_nice_yaml(indent=2) | indent(2, False) }}
+  {{ promtail_config_scrape_configs | to_nice_yaml(indent=2) | indent(2, False) }}
 
 {% if promtail_target_config != {} %}
 target_config:
