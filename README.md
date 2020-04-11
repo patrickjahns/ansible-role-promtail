@@ -31,11 +31,11 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `promtail_loki_server_url` | http://127.0.0.1:3100 | Server url where promtail will push its result |
 | `promtail_config_server` | see [defaults/main.yml](defaults/main.yml) | promtail [server_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#server_config) section |
 | `promtail_config_positions` | {} | promtail [position_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#position_config) section |
-| `promtail_config_scrap_configs` | [] | promtail [scrap_configs](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#scrape_config) section |
+| `promtail_config_scrape_configs` | [] | promtail [scrap_configs](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#scrape_config) section |
 | `promtail_target_config` | {} | promtail [target_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#target_config) section |
 | `promtail_log_level` | "info" | Loglevel of promtail (one of: `debug`,`info`,`warn`,`error` ) |
 
-For each section (`promtail_config_clients`, `promtail_config_server`,`promtail_config_positions`,`promtail_config_scrap_configs`,`promtail_target_config`) the configuration can be passed accrodingly to the [official promtail configuration](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md). 
+For each section (`promtail_config_clients`, `promtail_config_server`,`promtail_config_positions`,`promtail_config_scrape_configs`,`promtail_target_config`) the configuration can be passed accrodingly to the [official promtail configuration](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md). 
 The role will converte the ansible vars into the respective yaml configuration for loki.
 
 ## Example Playbook
@@ -47,7 +47,7 @@ Basic playbook that will assume that loki will be listening at `http://127.0.0.1
   roles:
     - role: patrickjahns.promtail
       vars: 
-        promtail_config_scrap_configs:
+        promtail_config_scrape_configs:
           - job_name: system
             entry_parser: raw
             static_configs:
@@ -76,7 +76,7 @@ More complex example, that overrides server, client, positions configuration and
         promtail_config_positions:
           filename: /tmp/positions.yaml
 
-        promtail_config_scrap_configs:
+        promtail_config_scrape_configs:
           - job_name: system
             entry_parser: raw
             static_configs:
