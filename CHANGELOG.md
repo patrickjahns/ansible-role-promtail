@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.2.0) (2020-04-11)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.1.0...1.2.0)
+
+**Fixed bugs:**
+
+- fix: renamed promtail\_config\_scrap\_configs to promtail\_config\_scrape\_configs [\#10](https://github.com/patrickjahns/ansible-role-promtail/pull/10) ([patrickjahns](https://github.com/patrickjahns))
+
+**Merged pull requests:**
+
+- feat: install promtail 1.4.1 by default [\#9](https://github.com/patrickjahns/ansible-role-promtail/pull/9) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.1.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.1.0) (2020-03-01)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.0.1...1.1.0)
