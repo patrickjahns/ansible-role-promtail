@@ -13,6 +13,9 @@ clients:
   {{ promtail_config_clients | to_nice_yaml(indent=2) | indent(2, False) }}
 
 scrape_configs:
+  {% if promtail_config_include_default_file_sd_config | bool %}
+  {{ promtail_config_default_file_sd_config | to_nice_yaml(indent=2) | indent(2, False) }}
+  {% endif %}
   {{ promtail_config_scrape_configs | to_nice_yaml(indent=2) | indent(2, False) }}
 
 {% if promtail_target_config != {} %}
