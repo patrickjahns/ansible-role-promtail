@@ -21,7 +21,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `promtail_version` | "1.3.0" | promtail package version. Also accepts *latest* as parameter. |
+| `promtail_version` | "1.4.1" | promtail package version. Also accepts *latest* as parameter. |
 | `promtail_config_dir` | /etc/promtail | Directory for storing promtail configuration file |
 | `promtail_config_file` | "{{ promtail_config_dir }}/promtail.yml" | Configuration file used by promtail |
 | `promtail_system_user` | promtail | User the promtail process will run at |
