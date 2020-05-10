@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.3.0) (2020-05-10)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.2.0...1.3.0)
+
+**Implemented enhancements:**
+
+- Include canary [\#1](https://github.com/patrickjahns/ansible-role-promtail/issues/1)
+- add support for ubuntu disco [\#13](https://github.com/patrickjahns/ansible-role-promtail/pull/13) ([patrickjahns](https://github.com/patrickjahns))
+- Feat add file sd config [\#12](https://github.com/patrickjahns/ansible-role-promtail/pull/12) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.2.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.2.0) (2020-04-11)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.1.0...1.2.0)
