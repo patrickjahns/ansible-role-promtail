@@ -21,8 +21,9 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `promtail_version` | "1.3.0" | promtail package version. Also accepts *latest* as parameter. |
+| `promtail_version` | "1.4.1" | promtail package version. Also accepts *latest* as parameter. |
 | `promtail_config_dir` | /etc/promtail | Directory for storing promtail configuration file |
+| `promtail_config_file_sd_dir` | "{{ promtail_config_dir }}/file_sd" | Default directory for `file_sd` discovery |
 | `promtail_config_file` | "{{ promtail_config_dir }}/promtail.yml" | Configuration file used by promtail |
 | `promtail_system_user` | promtail | User the promtail process will run at |
 | `promtail_system_group` | "{{ promtail_system_user }}" | Group of the *promtail* user |
@@ -34,6 +35,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `promtail_config_scrape_configs` | [] | promtail [scrap_configs](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#scrape_config) section |
 | `promtail_target_config` | {} | promtail [target_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#target_config) section |
 | `promtail_log_level` | "info" | Loglevel of promtail (one of: `debug`,`info`,`warn`,`error` ) |
+| `promtail_config_include_default_file_sd_config` | "True" | When set to false, the default `file_sd` will not be provisioned |
 
 For each section (`promtail_config_clients`, `promtail_config_server`,`promtail_config_positions`,`promtail_config_scrape_configs`,`promtail_target_config`) the configuration can be passed accrodingly to the [official promtail configuration](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md). 
 The role will converte the ansible vars into the respective yaml configuration for loki.

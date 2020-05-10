@@ -16,7 +16,8 @@ def AnsibleDefaults():
 
 @pytest.mark.parametrize("dir", [
     "/opt/promtail",
-    "/etc/promtail"
+    "/etc/promtail",
+    "/etc/promtail/file_sd",
 ])
 def test_directories(host, dir):
     d = host.file(dir)

@@ -39,6 +39,7 @@
     mode: 0770
   with_items:
     - "{{ promtail_config_dir }}"
+    - "{{ promtail_config_file_sd_dir }}"
 
 - name: Create application dirs
   file:

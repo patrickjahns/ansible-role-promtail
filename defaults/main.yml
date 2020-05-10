@@ -2,6 +2,7 @@
 promtail_version: "1.4.1"
 promtail_dist_url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-amd64.zip"
 promtail_config_dir: /etc/promtail
+promtail_config_file_sd_dir: "{{ promtail_config_dir }}/file_sd"
 promtail_config_file: "{{ promtail_config_dir }}/promtail.yml"
 
 promtail_system_user: promtail
@@ -36,6 +37,16 @@ promtail_config_scrape_configs: []
 #          job: varlogs
 #          host: {{ ansible_hostname }}
 #          __path__: /var/log/*log
+
+promtail_config_include_default_file_sd_config: True
+
+promtail_config_default_file_sd_config:
+  - job_name: file_sd
+    file_sd_configs:
+      - files:
+          - "{{ promtail_config_file_sd_dir }}/*.yml"
+          - "{{ promtail_config_file_sd_dir }}/*.yaml"
+          - "{{ promtail_config_file_sd_dir }}/*.json"
 
 promtail_target_config: {}
 #  promtail_target_config:
