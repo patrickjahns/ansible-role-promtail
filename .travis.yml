@@ -9,6 +9,8 @@ env:
     #- ANSIBLE: 2.7
     - ANSIBLE: 2.8
     - ANSIBLE: 2.9
+    - MOLECULE_DISTRO: ubuntu2004
+      ANSIBLE: 2.9
     - MOLECULE_DISTRO: ubuntu1804
       ANSIBLE: 2.9
     - MOLECULE_DISTRO: ubuntu1604
