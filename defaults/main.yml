@@ -1,5 +1,5 @@
 ---
-promtail_version: "1.4.1"
+promtail_version: "1.5.0"
 promtail_dist_url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-amd64.zip"
 promtail_config_dir: /etc/promtail
 promtail_config_file_sd_dir: "{{ promtail_config_dir }}/file_sd"
