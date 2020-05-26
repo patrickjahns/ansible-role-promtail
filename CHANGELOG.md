@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.3.1) (2020-05-26)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.3.0...1.3.1)
+
+**Fixed bugs:**
+
+- fix: raise privileges of restart handler [\#15](https://github.com/patrickjahns/ansible-role-promtail/pull/15) ([terorie](https://github.com/terorie))
+
 ## [1.3.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.3.0) (2020-05-10)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.2.0...1.3.0)
