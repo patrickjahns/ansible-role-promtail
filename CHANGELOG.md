@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.4.0) (2020-05-27)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.3.1...1.4.0)
+
+**Implemented enhancements:**
+
+- feat: add support for arm architecture [\#22](https://github.com/patrickjahns/ansible-role-promtail/pull/22) ([patrickjahns](https://github.com/patrickjahns))
+- Promtail 1.5.0 [\#17](https://github.com/patrickjahns/ansible-role-promtail/pull/17) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.3.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.3.1) (2020-05-26)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.3.0...1.3.1)
