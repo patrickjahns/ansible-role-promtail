@@ -38,6 +38,9 @@ promtail_config_scrape_configs: []
 #          host: {{ ansible_hostname }}
 #          __path__: /var/log/*log
 
+promtail_config_scrape_configs_group: []
+promtail_config_scrape_configs_host: []
+
 promtail_config_include_default_file_sd_config: True
 
 promtail_config_default_file_sd_config:
