@@ -7,7 +7,7 @@
 
 ## Description
 
-Deploy [promtail](https://github.com/grafana/loki) using ansible.
+Deploy [promtail](https://github.com/grafana/loki) using ansible. Supports amd64 and arm architectures.
 For recent changes, please check the [CHANGELOG](/CHANGELOG.md) or have a look at [github releases](https://github.com/patrickjahns/ansible-role-promtail/releases)
 
 
