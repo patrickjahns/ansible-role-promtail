@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.5.0) (2020-07-29)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.4.0...1.5.0)
+
+**Implemented enhancements:**
+
+- Make role compatible with arm architecture [\#20](https://github.com/patrickjahns/ansible-role-promtail/issues/20)
+
+**Fixed bugs:**
+
+- Replace the rest of the hardcoded references to amd64 with {{ go\_arch }} [\#23](https://github.com/patrickjahns/ansible-role-promtail/pull/23) ([mkeesey](https://github.com/mkeesey))
+
 ## [1.4.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.4.0) (2020-05-27)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.3.1...1.4.0)
