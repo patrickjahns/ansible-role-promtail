@@ -54,13 +54,13 @@
 
 - name: Check promtail binary
   stat:
-    path: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-amd64"
+    path: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
   register: promtail_binary
 
 - name: Download promtail binaries
   get_url:
     url: "{{ promtail_dist_url }}"
-    dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-amd64.zip"
+    dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
     force: True
     checksum: "sha256:{{ __promtail_checksum }}"
   when: not promtail_binary.stat.exists
@@ -68,9 +68,9 @@
 - name: Unpack promtail binaries
   ignore_errors: "{{ ansible_check_mode }}"
   unarchive:
-    src: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-amd64.zip"
+    src: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
     dest: "{{ promtail_install_dir }}/{{ promtail_version }}"
-    creates: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-amd64"
+    creates: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
     remote_src: True
 
 - name: Create symlink to latest version
@@ -79,7 +79,7 @@
   ignore_errors: "{{ ansible_check_mode }}"
   file:
     state: link
-    src: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-amd64"
+    src: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
     dest: /usr/local/bin/promtail
     mode: 0755
 
