@@ -98,3 +98,19 @@
   template:
     src: service.j2
     dest: /etc/systemd/system/promtail.service
+
+- name: Check that writable positions file is exist
+  stat:
+    path: "{{ promtail_config_positions.filename }}"
+  register: position_file_stat_result
+  when: promtail_config_positions.filename is defined
+
+- name: Create positions file
+  notify:
+    - Restart promtail
+  file:
+    path: "{{ promtail_config_positions.filename }}"
+    owner: "{{ promtail_system_user }}"
+    state: touch
+  when: not position_file_stat_result.stat.exists or not position_file_stat_result.stat.rusr
+        or  not position_file_stat_result.stat.wusr or position_file_stat_result.stat.pw_name != promtail_system_user
