@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.6.0) (2020-09-03)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.5.0...1.6.0)
+
+**Fixed bugs:**
+
+- fix: specify provide permissions for file related tasks [\#27](https://github.com/patrickjahns/ansible-role-promtail/pull/27) ([patrickjahns](https://github.com/patrickjahns))
+
+**Merged pull requests:**
+
+- chore\(binary\): update promtail to version 1.6.0 [\#26](https://github.com/patrickjahns/ansible-role-promtail/pull/26) ([secustor](https://github.com/secustor))
+
 ## [1.5.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.5.0) (2020-07-29)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.4.0...1.5.0)
