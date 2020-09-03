@@ -71,6 +71,7 @@
     src: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
     dest: "{{ promtail_install_dir }}/{{ promtail_version }}"
     creates: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
+    mode: 0755
     remote_src: True
 
 - name: Create symlink to latest version
@@ -91,6 +92,7 @@
     dest: "{{ promtail_config_file }}"
     owner: root
     group: "{{ promtail_system_group }}"
+    mode: 0644
 
 - name: Create systemd service unit
   notify:
@@ -98,3 +100,4 @@
   template:
     src: service.j2
     dest: /etc/systemd/system/promtail.service
+    mode: 0644
