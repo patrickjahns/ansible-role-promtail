@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.7.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.7.0) (2020-10-28)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.6.1...1.7.0)
+
+**Implemented enhancements:**
+
+- Chore\(binary\) update promtail to 2.0.0 [\#32](https://github.com/patrickjahns/ansible-role-promtail/pull/32) ([abmurksi](https://github.com/abmurksi))
+
+**Merged pull requests:**
+
+- ci: test with ansible 2.10 [\#36](https://github.com/patrickjahns/ansible-role-promtail/pull/36) ([patrickjahns](https://github.com/patrickjahns))
+- fix: fix tests by including new required molecule-docker dependency [\#33](https://github.com/patrickjahns/ansible-role-promtail/pull/33) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.6.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.6.1) (2020-09-11)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.6.0...1.6.1)
