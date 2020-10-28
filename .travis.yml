@@ -9,14 +9,15 @@ env:
     #- ANSIBLE: 2.7
     - ANSIBLE: 2.8
     - ANSIBLE: 2.9
+    - ANSIBLE: 2.10
     - MOLECULE_DISTRO: ubuntu2004
-      ANSIBLE: 2.9
+      ANSIBLE: 2.10
     - MOLECULE_DISTRO: ubuntu1804
-      ANSIBLE: 2.9
+      ANSIBLE: 2.10
     - MOLECULE_DISTRO: ubuntu1604
-      ANSIBLE: 2.9
+      ANSIBLE: 2.10
     - MOLECULE_DISTRO: debian10
-      ANSIBLE: 2.9
+      ANSIBLE: 2.10
 
 install:
   - pip3 install tox-travis
