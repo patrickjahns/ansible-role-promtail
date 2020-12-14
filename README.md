@@ -1,6 +1,6 @@
 # Ansible Role: promtail
 
-[![Build Status](https://travis-ci.org/patrickjahns/ansible-role-promtail.svg?branch=master)](https://travis-ci.org/patrickjahns/ansible-role-promtail)
+[![Test](https://github.com/patrickjahns/ansible-role-promtail/workflows/Test/badge.svg)](https://github.com/patrickjahns/ansible-role-promtail/actions?query=workflow%3ATest+branch%3Amaster)
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 [![Ansible Role](https://img.shields.io/badge/ansible%20role-patrickjahns.promtail-blue.svg)](https://galaxy.ansible.com/patrickjahns/promtail/)
 [![GitHub tag](https://img.shields.io/github/tag/patrickjahns/ansible-role-promtail.svg)](https://github.com/patrickjahns/ansible-role-promtail/tags)
