@@ -1,0 +1,50 @@
+name: Test
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  ansible-later:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: ansible-later
+        uses: patrickjahns/ansible-later-action@v1
+        with:
+          config: ".later.yml"
+          path: "**/*.yml"
+
+  molecule:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - ANSIBLE: 2.8
+          - ANSIBLE: 2.9
+          - ANSIBLE: "2.10"
+          - ANSIBLE: "2.10"
+            MOLECULE_DISTRO: ubuntu1804
+          - ANSIBLE: "2.10"
+            MOLECULE_DISTRO: ubuntu2004
+          - ANSIBLE: "2.10"
+            MOLECULE_DISTRO: debian10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install tox
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox tox-gh-actions
+      - name: Run molecule
+        env:
+          ANSIBLE: ${{ matrix.ANSIBLE }}
+          MOLECULE_DISTRO: ${{ matrix.MOLECULE_DISTRO }}
+        run: |
+          tox -- molecule test --all --destroy always
