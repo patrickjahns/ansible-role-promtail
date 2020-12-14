@@ -31,7 +31,8 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `promtail_config_clients` | see [defaults/main.yml](defaults/main.yml) | promtail [client_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#client_config) section |
 | `promtail_loki_server_url` | http://127.0.0.1:3100 | Server url where promtail will push its result |
 | `promtail_config_server` | see [defaults/main.yml](defaults/main.yml) | promtail [server_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#server_config) section |
-| `promtail_config_positions` | {} | promtail [position_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#position_config) section |
+| `promtail_positions_path` | `/var/lib/promtail/positions.yml` | Path to the file where promtail tracks scraped log positons |
+| `promtail_config_positions` | {"filename": "{{ promtail_positions_path }}"} | promtail [position_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#position_config) section |
 | `promtail_config_scrape_configs` | [] | promtail [scrap_configs](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#scrape_config) section |
 | `promtail_target_config` | {} | promtail [target_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#target_config) section |
 | `promtail_log_level` | "info" | Loglevel of promtail (one of: `debug`,`info`,`warn`,`error` ) |

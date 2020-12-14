@@ -22,9 +22,9 @@ promtail_loki_server_url: http://127.0.0.1:3100
 promtail_config_clients:
   - url: "{{ promtail_loki_server_url }}/loki/api/v1/push"
 
-promtail_config_positions: {}
-#  promtail_config_positions:
-#    filename: /tmp/positions.yaml
+promtail_positions_path: /var/lib/promtail/positions.yml
+promtail_config_positions:
+  filename: "{{ promtail_positions_path }}"
 
 promtail_config_scrape_configs: []
 #  promtail_config_scrape_configs:
