@@ -30,7 +30,7 @@
     state: directory
     mode: 0755
 
-- name: Create config and data directories
+- name: Create config directories
   file:
     path: "{{ item }}"
     state: directory
@@ -40,7 +40,21 @@
   loop:
     - "{{ promtail_config_dir }}"
     - "{{ promtail_config_file_sd_dir }}"
-    - "{{ promtail_positions_path | dirname }}"
+
+- name: Check whether the data exists
+  stat:
+    path: "{{ promtail_positions_path | dirname }}"
+  register: promtail_positions_folder_stat
+  changed_when: False
+
+- name: Create data directory
+  file:
+    path: "{{ promtail_positions_path | dirname }}"
+    state: directory
+    owner: root
+    group: "{{ promtail_system_group }}"
+    mode: ug=rwx,o=
+  when: not promtail_positions_folder_stat.stat.exists
 
 - name: Create application dirs
   file:
