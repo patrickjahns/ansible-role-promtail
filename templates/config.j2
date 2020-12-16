@@ -19,6 +19,12 @@ scrape_configs:
   {% if promtail_config_scrape_configs|length %}
   {{ promtail_config_scrape_configs | to_nice_yaml(indent=2) | indent(2, False) }}
   {% endif %}
+  {% if promtail_config_scrape_configs_group|length %}
+  {{ promtail_config_scrape_configs_group | to_nice_yaml(indent=2) | indent(2, False) }}
+  {% endif %}
+  {% if promtail_config_scrape_configs_host|length %}
+  {{ promtail_config_scrape_configs_host | to_nice_yaml(indent=2) | indent(2, False) }}
+  {% endif %}
 
 {% if promtail_target_config != {} %}
 target_config:
