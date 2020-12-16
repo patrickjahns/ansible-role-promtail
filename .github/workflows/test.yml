@@ -32,6 +32,12 @@ jobs:
             MOLECULE_DISTRO: ubuntu2004
           - ANSIBLE: "2.10"
             MOLECULE_DISTRO: debian10
+          - ANSIBLE: "2.10"
+            MOLECULE_DISTRO: centos7
+          - ANSIBLE: "2.10"
+            MOLECULE_DISTRO: centos8
+          - ANSIBLE: "2.10"
+            MOLECULE_DISTRO: fedora31
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.7
