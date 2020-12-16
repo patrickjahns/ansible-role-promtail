@@ -2,4 +2,8 @@
 - name: Prepare
   hosts: all
   gather_facts: false
-  tasks: []
+  tasks: 
+    - name: Ensure that net-tools is available
+      package:
+        name: net-tools
+        state: present
