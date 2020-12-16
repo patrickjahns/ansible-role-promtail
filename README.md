@@ -110,11 +110,8 @@ If you would like to run tests on remote docker host just specify `DOCKER_HOST` 
 
 ## CI
 
-### Travis
-Combining molecule and travis CI allows us to test how new PRs will behave when used with multiple ansible versions and multiple operating systems. This also allows use to create test scenarios for different role configurations. As a result we have a quite large test matrix which will take more time than local testing, so please be patient.
-
-### Github Actions
-Additionally to TravisCI some github actions are run to perform static code analysis
+Github actions is used to test and validate this ansible role via [ansible-later](https://github.com/thegeeklab/ansible-later) and [molecule](https://github.com/ansible-community/molecule).
+Molecule tests will run with several operation systems as well as ansible version in order to ensure compatability.
 
 ## License
 
