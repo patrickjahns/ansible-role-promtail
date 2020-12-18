@@ -31,19 +31,20 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `promtail_config_clients` | see [defaults/main.yml](defaults/main.yml) | promtail [client_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#client_config) section |
 | `promtail_loki_server_url` | http://127.0.0.1:3100 | Server url where promtail will push its result |
 | `promtail_config_server` | see [defaults/main.yml](defaults/main.yml) | promtail [server_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#server_config) section |
-| `promtail_positions_path` | `/var/lib/promtail/positions.yml` | Path to the file where promtail tracks scraped log positons |
-| `promtail_config_positions` | {"filename": "{{ promtail_positions_path }}"} | promtail [position_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#position_config) section |
+| `promtail_positions_directory` | `/var/lib/promtail` | Path to the directory where promtail tracks scraped log positons |
+| `promtail_config_positions` | {"filename": "{{ promtail_positions_directory }}/positions.yml"} | promtail [position_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#position_config) section |
 | `promtail_config_scrape_configs` | [] | promtail [scrap_configs](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#scrape_config) section |
 | `promtail_target_config` | {} | promtail [target_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#target_config) section |
 | `promtail_log_level` | "info" | Loglevel of promtail (one of: `debug`,`info`,`warn`,`error` ) |
 | `promtail_config_include_default_file_sd_config` | "True" | When set to false, the default `file_sd` will not be provisioned |
 
-For each section (`promtail_config_clients`, `promtail_config_server`,`promtail_config_positions`,`promtail_config_scrape_configs`,`promtail_target_config`) the configuration can be passed accrodingly to the [official promtail configuration](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md). 
+For each section (`promtail_config_clients`, `promtail_config_server`,`promtail_config_positions`,`promtail_config_scrape_configs`,`promtail_target_config`) the configuration can be passed accrodingly to the [official promtail configuration](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md).
 The role will converte the ansible vars into the respective yaml configuration for loki.
 
 ## Example Playbook
 
-Basic playbook that will assume that loki will be listening at `http://127.0.0.1:3100` and a simple configuration to scrape `/var/log` logs
+Basic playbook that will assume that loki will be listening at `http://127.0.0.1:3100` and a simple configuration to scrape `/var/log` logs:
+
 ```yaml
 ---
 - hosts: all
@@ -61,7 +62,7 @@ Basic playbook that will assume that loki will be listening at `http://127.0.0.1
                 __path__: /var/log/*log
 ```
 
-More complex example, that overrides server, client, positions configuration and provides a scrap configuration for `/var/log`
+A more complex example, that overrides server, client, positions configuration and provides a scrap configuration for `/var/log`:
 
 ```yaml
 ---
@@ -77,7 +78,8 @@ More complex example, that overrides server, client, positions configuration and
             external_labels:
               host: "{{ ansible_hostname }}"
         promtail_config_positions:
-          filename: /tmp/positions.yaml
+          filename: "{{ promtail_positions_directory }}/positions.yaml"
+          sync_period: "60s"
 
         promtail_config_scrape_configs:
           - job_name: system
