@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.8.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.8.0) (2020-12-25)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.7.0...1.8.0)
+
+**Implemented enhancements:**
+
+- Make role compatible with RHEL linux distributions [\#8](https://github.com/patrickjahns/ansible-role-promtail/issues/8)
+- Feature rhel compatability [\#43](https://github.com/patrickjahns/ansible-role-promtail/pull/43) ([patrickjahns](https://github.com/patrickjahns))
+
+**Fixed bugs:**
+
+- Why is the promtail\_config\_positions empty by default? [\#37](https://github.com/patrickjahns/ansible-role-promtail/issues/37)
+
+**Closed issues:**
+
+- Move ansible tests to github actions [\#34](https://github.com/patrickjahns/ansible-role-promtail/issues/34)
+
+**Merged pull requests:**
+
+- CI: fix testing by pinning dependencies [\#44](https://github.com/patrickjahns/ansible-role-promtail/pull/44) ([patrickjahns](https://github.com/patrickjahns))
+- doc: improve readme [\#42](https://github.com/patrickjahns/ansible-role-promtail/pull/42) ([patrickjahns](https://github.com/patrickjahns))
+- CI: notify galay on a new release [\#41](https://github.com/patrickjahns/ansible-role-promtail/pull/41) ([patrickjahns](https://github.com/patrickjahns))
+- Fixes / extends configuration of the positions file [\#39](https://github.com/patrickjahns/ansible-role-promtail/pull/39) ([funkyfuture](https://github.com/funkyfuture))
+- ci: move to github actions [\#38](https://github.com/patrickjahns/ansible-role-promtail/pull/38) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.7.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.7.0) (2020-10-28)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.6.1...1.7.0)
