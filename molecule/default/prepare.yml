@@ -1,7 +1,7 @@
 ---
 - name: Prepare
   hosts: all
-  gather_facts: false
+  gather_facts: true
   tasks:
     - name: Ensure that net-tools is available
       package:
