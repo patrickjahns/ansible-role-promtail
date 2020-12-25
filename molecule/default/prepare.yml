@@ -7,3 +7,4 @@
       package:
         name: net-tools
         state: present
+      when: ansible_os_family == 'RedHat'
