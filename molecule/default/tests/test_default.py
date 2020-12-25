@@ -18,6 +18,7 @@ def AnsibleDefaults():
     "/opt/promtail",
     "/etc/promtail",
     "/etc/promtail/file_sd",
+    "/var/lib/promtail",
 ])
 def test_directories(host, dir):
     d = host.file(dir)

@@ -30,16 +30,17 @@
     state: directory
     mode: 0755
 
-- name: Create config dir
+- name: Create config directories
   file:
     path: "{{ item }}"
     state: directory
     owner: root
     group: "{{ promtail_system_group }}"
     mode: 0770
-  with_items:
+  loop:
     - "{{ promtail_config_dir }}"
     - "{{ promtail_config_file_sd_dir }}"
+    - "{{ promtail_positions_directory }}"
 
 - name: Create application dirs
   file:
