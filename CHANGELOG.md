@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.9.0) (2020-12-26)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.8.0...1.9.0)
+
+**Merged pull requests:**
+
+- chore: bump promtail version to 2.1.0 [\#45](https://github.com/patrickjahns/ansible-role-promtail/pull/45) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.8.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.8.0) (2020-12-25)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.7.0...1.8.0)
