@@ -28,13 +28,13 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `promtail_system_user` | promtail | User the promtail process will run at |
 | `promtail_system_group` | "{{ promtail_system_user }}" | Group of the *promtail* user |
 | `promtail_user_additional_groups` | "adm" | Additional groups to be added to *promtail* user to give access to allow scraping of specific log files |
-| `promtail_config_clients` | see [defaults/main.yml](defaults/main.yml) | promtail [client_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#client_config) section |
+| `promtail_config_clients` | see [defaults/main.yml](defaults/main.yml) | promtail [clients](https://grafana.com/docs/loki/latest/clients/promtail/configuration/#clientsg) section |
 | `promtail_loki_server_url` | http://127.0.0.1:3100 | Server url where promtail will push its result |
-| `promtail_config_server` | see [defaults/main.yml](defaults/main.yml) | promtail [server_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#server_config) section |
+| `promtail_config_server` | see [defaults/main.yml](defaults/main.yml) | promtail [server](https://grafana.com/docs/loki/latest/clients/promtail/configuration/#server) section |
 | `promtail_positions_directory` | `/var/lib/promtail` | Path to the directory where promtail tracks scraped log positons |
-| `promtail_config_positions` | {"filename": "{{ promtail_positions_directory }}/positions.yml"} | promtail [position_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#position_config) section |
-| `promtail_config_scrape_configs` | [] | promtail [scrap_configs](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#scrape_config) section |
-| `promtail_target_config` | {} | promtail [target_config](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md#target_config) section |
+| `promtail_config_positions` | {"filename": "{{ promtail_positions_directory }}/positions.yml"} | promtail [positions](https://grafana.com/docs/loki/latest/clients/promtail/configuration/#positions) section |
+| `promtail_config_scrape_configs` | [] | promtail [scrape_configs](https://grafana.com/docs/loki/latest/clients/promtail/configuration/#scrape_configs) section |
+| `promtail_target_config` | {} | promtail [target_config](https://grafana.com/docs/loki/latest/clients/promtail/configuration/#target_config) section |
 | `promtail_log_level` | "info" | Loglevel of promtail (one of: `debug`,`info`,`warn`,`error` ) |
 | `promtail_config_include_default_file_sd_config` | "True" | When set to false, the default `file_sd` will not be provisioned |
 
