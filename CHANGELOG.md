@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.9.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.9.1) (2020-12-30)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.9.0...1.9.1)
+
+**Closed issues:**
+
+- Entry\_parser setting is no longer needed in playbook examples [\#47](https://github.com/patrickjahns/ansible-role-promtail/issues/47)
+
+**Merged pull requests:**
+
+- doc: correct links to upstream configuration [\#50](https://github.com/patrickjahns/ansible-role-promtail/pull/50) ([patrickjahns](https://github.com/patrickjahns))
+- Remove entry parser setting from example config [\#48](https://github.com/patrickjahns/ansible-role-promtail/pull/48) ([tideline3d](https://github.com/tideline3d))
+
 ## [1.9.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.9.0) (2020-12-26)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.8.0...1.9.0)
