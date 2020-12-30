@@ -53,7 +53,6 @@ Basic playbook that will assume that loki will be listening at `http://127.0.0.1
       vars: 
         promtail_config_scrape_configs:
           - job_name: system
-            entry_parser: raw
             static_configs:
             - targets:
                 - localhost
@@ -83,7 +82,6 @@ A more complex example, that overrides server, client, positions configuration a
 
         promtail_config_scrape_configs:
           - job_name: system
-            entry_parser: raw
             static_configs:
             - targets:
                 - localhost
