@@ -28,7 +28,7 @@ jobs:
       - name: extract version from commit message
         shell: bash
         run: |
-          VERSION=$(echo "${COMMIT_MSG}" | grep -Po '\d.\d.\d')
+          VERSION=$(echo "${COMMIT_MSG}" | grep -Po '\d+.\d+.\d+')
           CHANGELOG=$(cat CHANGELOG.md | sed -n '/^## \[/{p; :loop n; /^## \[/q; p; b loop}')
           CHANGELOG="${CHANGELOG%??}"
           CHANGELOG="${CHANGELOG//'%'/'%25'}"
