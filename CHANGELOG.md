@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.11.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.11.0) (2021-04-06)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.10.0...1.11.0)
+
+**Implemented enhancements:**
+
+- chore: bump promtail version to 2.2.1 [\#56](https://github.com/patrickjahns/ansible-role-promtail/pull/56) ([patrickjahns](https://github.com/patrickjahns))
+
+**Closed issues:**
+
+- Version 1.10.0 not available on Galaxy [\#53](https://github.com/patrickjahns/ansible-role-promtail/issues/53)
+
 ## [1.10.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.10.0) (2021-04-02)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.9.1...1.10.0)
