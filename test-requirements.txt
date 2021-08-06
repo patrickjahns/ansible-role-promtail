@@ -4,4 +4,3 @@ docker
 ansible-lint>=3.4.0
 pytest-testinfra
 flake8
-rich < 9.5
