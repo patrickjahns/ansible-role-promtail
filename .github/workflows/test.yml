@@ -24,27 +24,27 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - ANSIBLE: 2.8
-          - ANSIBLE: 2.9
           - ANSIBLE: "2.10"
-          - ANSIBLE: "2.10"
+          - ANSIBLE: "3.4"
+          - ANSIBLE: "4.3"
+          - ANSIBLE: "4.3"
             MOLECULE_DISTRO: ubuntu1804
-          - ANSIBLE: "2.10"
+          - ANSIBLE: "4.3"
             MOLECULE_DISTRO: ubuntu2004
-          - ANSIBLE: "2.10"
+          - ANSIBLE: "4.3"
             MOLECULE_DISTRO: debian10
-          - ANSIBLE: "2.10"
+          - ANSIBLE: "4.3"
             MOLECULE_DISTRO: centos7
-          - ANSIBLE: "2.10"
+          - ANSIBLE: "4.3"
             MOLECULE_DISTRO: centos8
-          - ANSIBLE: "2.10"
+          - ANSIBLE: "4.3"
             MOLECULE_DISTRO: fedora31
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.7
+      - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
-          python-version: 3.7
+          python-version: 3.9
       - name: Install tox
         run: |
           python -m pip install --upgrade pip
