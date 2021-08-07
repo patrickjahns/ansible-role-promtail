@@ -1,6 +1,5 @@
 molecule>=3.0.0
 molecule-docker
 docker
-ansible-lint
 pytest-testinfra
 flake8
