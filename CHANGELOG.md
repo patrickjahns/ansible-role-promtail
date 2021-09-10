@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.12.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.12.0) (2021-09-10)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.11.0...1.12.0)
+
+**Closed issues:**
+
+- Remove update\_cache or make it optional [\#63](https://github.com/patrickjahns/ansible-role-promtail/issues/63)
+- Remove `run\_once: True` in preflight [\#59](https://github.com/patrickjahns/ansible-role-promtail/issues/59)
+
+**Merged pull requests:**
+
+- Add possibility to opt out of APT cache updates [\#64](https://github.com/patrickjahns/ansible-role-promtail/pull/64) ([mweinelt](https://github.com/mweinelt))
+- chore: bump promtail to version 2.3.0 [\#60](https://github.com/patrickjahns/ansible-role-promtail/pull/60) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.11.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.11.0) (2021-04-06)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.10.0...1.11.0)
