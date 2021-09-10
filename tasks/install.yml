@@ -3,7 +3,7 @@
   package:
     name: unzip
     state: present
-    update_cache: True
+    update_cache: "{{ promtail_apt_update_cache }}"
 
 - name: Create promtail group
   group:

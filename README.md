@@ -13,7 +13,7 @@ For recent changes, please check the [CHANGELOG](/CHANGELOG.md) or have a look a
 
 ## Requirements
 
-- Ansible >= 2.7 
+- Ansible >= 2.7
 
 ## Role Variables
 
@@ -37,6 +37,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 | `promtail_target_config` | {} | promtail [target_config](https://grafana.com/docs/loki/latest/clients/promtail/configuration/#target_config) section |
 | `promtail_log_level` | "info" | Loglevel of promtail (one of: `debug`,`info`,`warn`,`error` ) |
 | `promtail_config_include_default_file_sd_config` | "True" | When set to false, the default `file_sd` will not be provisioned |
+| `promtail_apt_update_cache` | "True" | When set to false the role will not update the APT cache on its own |
 
 For each section (`promtail_config_clients`, `promtail_config_server`,`promtail_config_positions`,`promtail_config_scrape_configs`,`promtail_target_config`) the configuration can be passed accrodingly to the [official promtail configuration](https://github.com/grafana/loki/blob/master/docs/clients/promtail/configuration.md).
 The role will converte the ansible vars into the respective yaml configuration for loki.
@@ -50,7 +51,7 @@ Basic playbook that will assume that loki will be listening at `http://127.0.0.1
 - hosts: all
   roles:
     - role: patrickjahns.promtail
-      vars: 
+      vars:
         promtail_config_scrape_configs:
           - job_name: system
             static_configs:
@@ -68,7 +69,7 @@ A more complex example, that overrides server, client, positions configuration a
 - hosts: all
   roles:
     - role: patrickjahns.promtail
-      vars: 
+      vars:
         promtail_config_server:
           http_listen_port: 9080
           grpc_listen_port: 9081
