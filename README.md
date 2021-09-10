@@ -13,7 +13,7 @@ For recent changes, please check the [CHANGELOG](/CHANGELOG.md) or have a look a
 
 ## Requirements
 
-- Ansible >= 2.7 
+- Ansible >= 2.7
 
 ## Role Variables
 
@@ -51,7 +51,7 @@ Basic playbook that will assume that loki will be listening at `http://127.0.0.1
 - hosts: all
   roles:
     - role: patrickjahns.promtail
-      vars: 
+      vars:
         promtail_config_scrape_configs:
           - job_name: system
             static_configs:
@@ -69,7 +69,7 @@ A more complex example, that overrides server, client, positions configuration a
 - hosts: all
   roles:
     - role: patrickjahns.promtail
-      vars: 
+      vars:
         promtail_config_server:
           http_listen_port: 9080
           grpc_listen_port: 9081
