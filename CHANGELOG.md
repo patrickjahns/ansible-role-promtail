@@ -10,6 +10,19 @@
 
 **Merged pull requests:**
 
+- \[RELEASE\] 1.13.1 [\#69](https://github.com/patrickjahns/ansible-role-promtail/pull/69) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update meta and CI to show Debian Bullseye support. [\#68](https://github.com/patrickjahns/ansible-role-promtail/pull/68) ([twoequaldots](https://github.com/twoequaldots))
+
+## [1.13.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.13.1) (2021-11-28)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.13.0...1.13.1)
+
+**Closed issues:**
+
+- Cannot pull latest version [\#65](https://github.com/patrickjahns/ansible-role-promtail/issues/65)
+
+**Merged pull requests:**
+
 - Update meta and CI to show Debian Bullseye support. [\#68](https://github.com/patrickjahns/ansible-role-promtail/pull/68) ([twoequaldots](https://github.com/twoequaldots))
 
 ## [1.13.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.13.0) (2021-11-10)
