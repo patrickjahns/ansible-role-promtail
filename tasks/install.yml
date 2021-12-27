@@ -100,5 +100,5 @@
     - Restart promtail
   template:
     src: service.j2
-    dest: /etc/systemd/system/promtail.service
+    dest: "/etc/systemd/system/{{ promtail_systemd_service }}.service"
     mode: 0644
