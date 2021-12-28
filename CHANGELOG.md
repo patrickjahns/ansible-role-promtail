@@ -12,6 +12,7 @@
 
 - Ability to disable checksum check [\#71](https://github.com/patrickjahns/ansible-role-promtail/issues/71)
 
+
 ## [1.13.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.13.1) (2021-11-28)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.13.0...1.13.1)
