@@ -12,6 +12,22 @@
 
 - Ability to disable checksum check [\#71](https://github.com/patrickjahns/ansible-role-promtail/issues/71)
 
+**Merged pull requests:**
+
+- \[RELEASE\] 1.14.0 [\#74](https://github.com/patrickjahns/ansible-role-promtail/pull/74) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+## [1.14.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.14.0) (2021-12-28)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.13.1...1.14.0)
+
+**Implemented enhancements:**
+
+- Allow for custom checksum [\#72](https://github.com/patrickjahns/ansible-role-promtail/pull/72) ([Cyb3r-Jak3](https://github.com/Cyb3r-Jak3))
+
+**Closed issues:**
+
+- Ability to disable checksum check [\#71](https://github.com/patrickjahns/ansible-role-promtail/issues/71)
+
 ## [1.13.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.13.1) (2021-11-28)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.13.0...1.13.1)
