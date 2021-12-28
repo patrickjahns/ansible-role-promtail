@@ -63,7 +63,7 @@
     url: "{{ promtail_dist_url }}"
     dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
     force: True
-    checksum: "sha256:{{ __promtail_checksum }}"
+    checksum: "{{ promtail_custom_checksum if promtail_custom_checksum else 'sha256:' + __promtail_checksum }}"
   when: not promtail_binary.stat.exists
 
 - name: Unpack promtail binaries

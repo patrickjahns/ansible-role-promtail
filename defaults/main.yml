@@ -2,6 +2,7 @@
 promtail_apt_update_cache: True
 promtail_version: "2.4.1"
 promtail_dist_url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-{{ go_arch }}.zip"
+promtail_custom_checksum: ""
 promtail_config_dir: /etc/promtail
 promtail_config_file_sd_dir: "{{ promtail_config_dir }}/file_sd"
 promtail_config_file: "{{ promtail_config_dir }}/promtail.yml"
