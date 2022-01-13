@@ -2,7 +2,7 @@
 - name: Restart promtail
   become: True
   systemd:
-    name: promtail
+    name: "{{ promtail_systemd_service }}"
     state: restarted
     daemon_reload: True
   tags:
