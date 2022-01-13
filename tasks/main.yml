@@ -1,10 +1,10 @@
 ---
-- include: preflight.yml
+- import_tasks: preflight.yml
   tags:
     - promtail_install
     - promtail
 
-- include: install.yml
+- import_tasks: install.yml
   become: True
   tags:
     - promtail_install
