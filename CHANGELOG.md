@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.15.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.15.0) (2022-01-13)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.14.0...1.15.0)
+
+**Implemented enhancements:**
+
+- Add promtail\_systemd\_service variable \(needed to configure multiple promtail instances\). [\#73](https://github.com/patrickjahns/ansible-role-promtail/pull/73) ([aberes](https://github.com/aberes))
+
+**Merged pull requests:**
+
+- Remove deprecated `include` [\#78](https://github.com/patrickjahns/ansible-role-promtail/pull/78) ([Lithimlin](https://github.com/Lithimlin))
+- chore: update to promtail 2.4.2 [\#77](https://github.com/patrickjahns/ansible-role-promtail/pull/77) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.14.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.14.0) (2021-12-28)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.13.1...1.14.0)
