@@ -1,0 +1,25 @@
+{
+  "extends": ["config:base", ":dependencyDashboard"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["grafana/loki"],
+      "extractVersion": "^v(?<version>.*)$"
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^defaults\\/main\\.yml$"],
+      "matchStrings": ["promtail_version: \"(?<currentValue>.*)\"\\s+"],
+      "depNameTemplate": "grafana/loki",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": ["^README\\.md$"],
+      "matchStrings": [
+        "\\|\\s+`promtail_version`\\s+\\|\\s+\"(?<currentValue>.*)\"\\s+\\|\\s+.*\\s+\\|\\s+"
+      ],
+      "depNameTemplate": "grafana/loki",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
