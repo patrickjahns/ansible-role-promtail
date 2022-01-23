@@ -3,4 +3,4 @@ molecule==3.5.2
 molecule-docker==1.0.2
 pytest-testinfra
 flake8
-setuptools==58.5.3
+setuptools==60.5.0
