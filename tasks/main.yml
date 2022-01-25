@@ -17,6 +17,7 @@
     name: "{{ promtail_systemd_service }}"
     state: started
     enabled: True
+  when: not ansible_check_mode
   tags:
     - promtail_run
     - promtail
