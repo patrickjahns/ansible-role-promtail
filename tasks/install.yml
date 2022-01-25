@@ -85,7 +85,8 @@
     src: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
     dest: /usr/local/bin/promtail
     mode: 0755
-
+  when: not ansible_check_mode
+   
 - name: Write config
   notify:
     - Restart promtail
