@@ -27,5 +27,21 @@ provisioner:
         ansible_python_interpreter: /usr/bin/python3
 scenario:
   name: default
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - check  # we should not fail on check mode prior to running the role
+    - converge
+    - idempotence
+    - check  # check should pass after the role has converged as well
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
 verifier:
   name: testinfra
