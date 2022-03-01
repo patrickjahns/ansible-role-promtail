@@ -11,7 +11,7 @@ jobs:
   ansible-later:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: ansible-later
         uses: patrickjahns/ansible-later-action@v1
         with:
@@ -42,7 +42,7 @@ jobs:
           - ANSIBLE: "4.3"
             MOLECULE_DISTRO: fedora31
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
