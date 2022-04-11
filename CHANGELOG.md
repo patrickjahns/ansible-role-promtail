@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.16.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.16.0) (2022-04-11)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.15.0...1.16.0)
+
+**Implemented enhancements:**
+
+- Add upstream sync script [\#4](https://github.com/patrickjahns/ansible-role-promtail/issues/4)
+- chore\(deps\): update dependency grafana/loki to v2.5.0 [\#103](https://github.com/patrickjahns/ansible-role-promtail/pull/103) ([renovate[bot]](https://github.com/apps/renovate))
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency setuptools to v62 [\#102](https://github.com/patrickjahns/ansible-role-promtail/pull/102) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update robertdebock/galaxy-action action to v1.2.0 [\#100](https://github.com/patrickjahns/ansible-role-promtail/pull/100) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v61 [\#99](https://github.com/patrickjahns/ansible-role-promtail/pull/99) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v3 [\#98](https://github.com/patrickjahns/ansible-role-promtail/pull/98) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/setup-python action to v3 [\#97](https://github.com/patrickjahns/ansible-role-promtail/pull/97) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency molecule to v3.6.1 [\#95](https://github.com/patrickjahns/ansible-role-promtail/pull/95) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v60.9.2 [\#94](https://github.com/patrickjahns/ansible-role-promtail/pull/94) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency molecule to v3.6.0 [\#93](https://github.com/patrickjahns/ansible-role-promtail/pull/93) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v60.8.1 [\#92](https://github.com/patrickjahns/ansible-role-promtail/pull/92) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v60.6.0 [\#91](https://github.com/patrickjahns/ansible-role-promtail/pull/91) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v60 [\#88](https://github.com/patrickjahns/ansible-role-promtail/pull/88) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v58.5.3 [\#87](https://github.com/patrickjahns/ansible-role-promtail/pull/87) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update robertdebock/galaxy-action action to v1.1.1 [\#83](https://github.com/patrickjahns/ansible-role-promtail/pull/83) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): pin dependencies [\#82](https://github.com/patrickjahns/ansible-role-promtail/pull/82) ([renovate[bot]](https://github.com/apps/renovate))
+- chore: add renovate config [\#80](https://github.com/patrickjahns/ansible-role-promtail/pull/80) ([MindTooth](https://github.com/MindTooth))
+
 ## [1.15.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.15.0) (2022-01-13)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.14.0...1.15.0)
