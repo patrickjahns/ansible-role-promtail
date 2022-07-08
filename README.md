@@ -21,7 +21,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name                                             | Default Value                                                    | Description                                                                                                            |
 |--------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| `promtail_version`                               | "2.5.0"                                                          | promtail package version. Also accepts *latest* as parameter.                                                          |
+| `promtail_version`                               | "2.6.0"                                                          | promtail package version. Also accepts *latest* as parameter.                                                          |
 | `promtail_custom_checksum`                       | ""                                                               | Custom checksum for custom build promtail binaries                                                                     |
 | `promtail_config_dir`                            | /etc/promtail                                                    | Directory for storing promtail configuration file                                                                      |
 | `promtail_config_file_sd_dir`                    | "{{ promtail_config_dir }}/file_sd"                              | Default directory for `file_sd` discovery                                                                              |
