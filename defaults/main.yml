@@ -10,6 +10,7 @@ promtail_config_file: "{{ promtail_config_dir }}/promtail.yml"
 promtail_system_user: promtail
 promtail_system_group: "{{ promtail_system_user }}"
 promtail_user_additional_groups: "adm"
+promtail_systemd_service_template_file: service.j2
 promtail_systemd_service: promtail
 
 promtail_install_dir: /opt/promtail

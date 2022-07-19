@@ -99,6 +99,6 @@
   notify:
     - Restart promtail
   template:
-    src: service.j2
+    src: "{{ promtail_systemd_service_template_file }}"
     dest: "/etc/systemd/system/{{ promtail_systemd_service }}.service"
     mode: 0644
