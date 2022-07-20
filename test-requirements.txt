@@ -1,5 +1,5 @@
 docker
-molecule==4.0.0
+molecule==4.0.1
 molecule-docker==2.0.0
 pytest-testinfra
 flake8
