@@ -25,11 +25,15 @@
         promtail_version: "{{ _latest_release.json.tag_name[1:] }}"
   when:
     - promtail_version == "latest"
+  delegate_to: localhost
+  run_once: True
+
 
 - name: "Get checksum list"
   set_fact:
     __promtail_checksums: "{{ lookup('url', 'https://github.com/grafana/loki/releases/download/v' + promtail_version + '/SHA256SUMS', wantlist=True) | list }}"
   run_once: True
+  delegate_to: localhost
 
 - name: "Get checksum for {{ go_arch }} architecture"
   set_fact:
