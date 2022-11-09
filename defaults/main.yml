@@ -6,6 +6,7 @@ promtail_custom_checksum: ""
 promtail_config_dir: /etc/promtail
 promtail_config_file_sd_dir: "{{ promtail_config_dir }}/file_sd"
 promtail_config_file: "{{ promtail_config_dir }}/promtail.yml"
+promtail_config_template_file: config.j2
 
 promtail_system_user: promtail
 promtail_system_group: "{{ promtail_system_user }}"

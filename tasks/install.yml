@@ -89,7 +89,7 @@
   notify:
     - Restart promtail
   template:
-    src: config.j2
+    src: "{{ promtail_config_template_file }}"
     dest: "{{ promtail_config_file }}"
     owner: root
     group: "{{ promtail_system_group }}"
