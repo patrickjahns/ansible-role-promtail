@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.19.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.19.0) (2022-11-18)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.18.0...1.19.0)
+
+**Implemented enhancements:**
+
+- chore\(deps\): update dependency grafana/loki to v2.7.0 [\#134](https://github.com/patrickjahns/ansible-role-promtail/pull/134) ([renovate[bot]](https://github.com/apps/renovate))
+- add var to control promtail config env var expansion [\#132](https://github.com/patrickjahns/ansible-role-promtail/pull/132) ([rplevka](https://github.com/rplevka))
+
+**Closed issues:**
+
+- Make LimitNOFILE in systemd service configurable [\#129](https://github.com/patrickjahns/ansible-role-promtail/issues/129)
+- run\_once causes failures when not all nodes in batch get promtail [\#112](https://github.com/patrickjahns/ansible-role-promtail/issues/112)
+
+**Merged pull requests:**
+
+- test: adjust ansible test matrix [\#136](https://github.com/patrickjahns/ansible-role-promtail/pull/136) ([patrickjahns](https://github.com/patrickjahns))
+- ci: run in cgroups mode host - fixes systemd issues [\#133](https://github.com/patrickjahns/ansible-role-promtail/pull/133) ([patrickjahns](https://github.com/patrickjahns))
+- chore\(deps\): update dependency setuptools to v65 [\#127](https://github.com/patrickjahns/ansible-role-promtail/pull/127) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency molecule to v4.0.1 [\#123](https://github.com/patrickjahns/ansible-role-promtail/pull/123) ([renovate[bot]](https://github.com/apps/renovate))
+- fix: delegate fetching of version information to localhost [\#122](https://github.com/patrickjahns/ansible-role-promtail/pull/122) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.18.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.18.0) (2022-07-19)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.17.0...1.18.0)
