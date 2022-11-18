@@ -16,16 +16,12 @@ galaxy_info:
     - name: Fedora
       versions:
         - all
-    - name: Ubuntu
-      versions:
-        - disco
-        - bionic
-        - xenial
     - name: Debian
       versions:
-        - stretch
-        - buster
-        - bullseye
+        - all
+    - name: Ubuntu
+      versions:
+        - all
   galaxy_tags:
     - promtail
     - loki
