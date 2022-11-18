@@ -26,20 +26,21 @@ jobs:
         include:
           - ANSIBLE: "2.10"
           - ANSIBLE: "3.4"
-          - ANSIBLE: "4.3"
-          - ANSIBLE: "4.3"
+          - ANSIBLE: "4.10"
+          - ANSIBLE: "5.10"
+          - ANSIBLE: "6.6"
             MOLECULE_DISTRO: ubuntu2004
-          - ANSIBLE: "4.3"
+          - ANSIBLE: "6.6"
             MOLECULE_DISTRO: ubuntu2204
-          - ANSIBLE: "4.3"
+          - ANSIBLE: "6.6"
             MOLECULE_DISTRO: debian10
-          - ANSIBLE: "4.3"
+          - ANSIBLE: "6.6"
             MOLECULE_DISTRO: debian11
 #          - ANSIBLE: "4.3"
 #            MOLECULE_DISTRO: centos7
-          - ANSIBLE: "4.3"
+          - ANSIBLE: "6.6"
             MOLECULE_DISTRO: centos8
-          - ANSIBLE: "4.3"
+          - ANSIBLE: "6.6"
             MOLECULE_DISTRO: fedora37
     steps:
       - uses: actions/checkout@v3
