@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.19.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.19.1) (2022-11-25)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.19.0...1.19.1)
+
+**Merged pull requests:**
+
+- Set promtail user home to install directory [\#138](https://github.com/patrickjahns/ansible-role-promtail/pull/138) ([hafu](https://github.com/hafu))
+
 ## [1.19.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.19.0) (2022-11-18)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.18.0...1.19.0)
