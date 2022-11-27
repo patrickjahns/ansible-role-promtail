@@ -1,0 +1,45 @@
+---
+dependency:
+  name: shell
+  command: git clone https://github.com/patrickjahns/ansible-role-promtail.git molecule/upgrade/roles/ansible-role-promtail-previous 2> /dev/null || (cd "molecule/upgrade/roles/ansible-role-promtail-previous" ; git pull origin master)
+
+driver:
+  name: docker
+
+platforms:
+  - name: instance
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroupns_mode: host
+    pre_build_image: true
+
+provisioner:
+  name: ansible
+  playbooks:
+    converge: playbook.yml
+  inventory:
+    group_vars:
+      python3:
+        ansible_python_interpreter: /usr/bin/python3
+scenario:
+  name: upgrade
+  test_sequence:
+    - dependency
+    - lint
+    - cleanup
+    - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    # skip idempotence tests, as upgrads/changes to the role will always fail idempotency tests
+    # - idempotence
+    - side_effect
+    - verify
+    - cleanup
+    - destroy
+verifier:
+  name: testinfra
