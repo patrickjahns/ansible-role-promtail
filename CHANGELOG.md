@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.19.2](https://github.com/patrickjahns/ansible-role-promtail/tree/1.19.2) (2022-11-28)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.19.1...1.19.2)
+
+**Fixed bugs:**
+
+- Remove home parameter in user task [\#143](https://github.com/patrickjahns/ansible-role-promtail/pull/143) ([hafu](https://github.com/hafu))
+
+**Closed issues:**
+
+- 1.19.1 no longer works: user promtail is currently used by process 546 [\#140](https://github.com/patrickjahns/ansible-role-promtail/issues/140)
+
+**Merged pull requests:**
+
+- test: added tests for catching role upgrade issues [\#141](https://github.com/patrickjahns/ansible-role-promtail/pull/141) ([patrickjahns](https://github.com/patrickjahns))
+- chore\(deps\): update dependency setuptools to v65.6.3 [\#137](https://github.com/patrickjahns/ansible-role-promtail/pull/137) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.19.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.19.1) (2022-11-25)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.19.0...1.19.1)
