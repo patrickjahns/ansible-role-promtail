@@ -21,7 +21,6 @@
     shell: /usr/sbin/nologin
     system: True
     createhome: False
-    home: "{{ promtail_install_dir }}"
   when: promtail_system_user != "root"
 
 - name: Ensure /usr/local/bin exists
