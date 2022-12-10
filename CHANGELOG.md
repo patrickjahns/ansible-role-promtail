@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.20.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.20.0) (2022-12-10)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.19.2...1.20.0)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency grafana/loki to v2.7.1 [\#146](https://github.com/patrickjahns/ansible-role-promtail/pull/146) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency molecule to v4.0.4 [\#145](https://github.com/patrickjahns/ansible-role-promtail/pull/145) ([renovate[bot]](https://github.com/apps/renovate))
+- fix\(renovate\): major rewrite by removing duplicates [\#144](https://github.com/patrickjahns/ansible-role-promtail/pull/144) ([MindTooth](https://github.com/MindTooth))
+
 ## [1.19.2](https://github.com/patrickjahns/ansible-role-promtail/tree/1.19.2) (2022-11-28)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.19.1...1.19.2)
