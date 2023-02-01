@@ -56,10 +56,9 @@ def test_grpc_socket(host):
     s = host.socket("tcp://0.0.0.0:9095")
     assert s.is_listening
 
-# TODO: enable again
-# https://github.com/patrickjahns/ansible-role-promtail/issues/135
-# def test_version(host, AnsibleDefaults):
-#     version = os.getenv('PROMTAIL', AnsibleDefaults['promtail_version'])
-#     out = host.run("/usr/local/bin/promtail --version").stdout
-#     assert version in out
-#     assert "promtail" in out
+
+def test_version(host, AnsibleDefaults):
+    version = os.getenv('PROMTAIL', AnsibleDefaults['promtail_version'])
+    out = host.run("/usr/local/bin/promtail --version").stdout
+    assert version in out
+    assert "promtail" in out
