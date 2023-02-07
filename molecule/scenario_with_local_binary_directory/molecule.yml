@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint .
+  flake8
+
+platforms:
+  - name: instance
+    image: quay.io/centos/centos:stream8
+    command: /sbin/init
+    privileged: True
+
+provisioner:
+  name: ansible
+  playbooks:
+    converge: playbook.yml
+  inventory:
+    group_vars:
+      python3:
+        ansible_python_interpreter: /usr/bin/python3
+scenario:
+  name: scenario_with_local_binary_directory
+verifier:
+  name: testinfra
