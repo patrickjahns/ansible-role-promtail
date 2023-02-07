@@ -57,49 +57,35 @@
     path: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
   register: promtail_binary
 
-- block:
-    - name: Download promtail binaries
-      get_url:
-        url: "{{ promtail_dist_url }}"
-        dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
-        force: True
-        checksum: "{{ promtail_custom_checksum if promtail_custom_checksum else 'sha256:' + __promtail_checksum }}"
-      when: not promtail_binary.stat.exists
-
-    - name: Unpack promtail binaries
-      ignore_errors: "{{ ansible_check_mode }}"
-      unarchive:
-        src: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
-        dest: "{{ promtail_install_dir }}/{{ promtail_version }}"
-        creates: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
-        mode: 0755
-        remote_src: True
+- name: Download promtail binaries
+  get_url:
+    url: "{{ promtail_dist_url }}"
+    dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    force: True
+    checksum: "{{ promtail_custom_checksum if promtail_custom_checksum else 'sha256:' + __promtail_checksum }}"
   when:
+    - not promtail_binary.stat.exists
     - promtail_binary_local_dir | length == 0
-    - not promtail_skip_install
 
-- block:
-    - name: Create directory if non existant
-      file:
-        path: "{{ promtail_install_dir }}/{{ promtail_version }}"
-        state: directory
-        mode: 0755
-        owner: root
-        group: root
-
-    - name: Propagate locally distributed promtail bin
-      copy:
-        src: "{{ promtail_binary_local_dir }}/promtail-{{ promtail_version }}-linux-{{ go_arch }}"
-        dest: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
-        mode: 0755
-        owner: root
-        group: root
-      notify:
-        - Restart promtail
-
+- name: propagate locally distributed promtail archive
+  copy:
+    src: "{{ promtail_binary_local_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    mode: 0755
+    owner: root
+    group: root
   when:
+    - not promtail_binary.stat.exists
     - promtail_binary_local_dir | length > 0
-    - not promtail_skip_install
+
+- name: Unpack promtail binaries
+  ignore_errors: "{{ ansible_check_mode }}"
+  unarchive:
+    src: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    dest: "{{ promtail_install_dir }}/{{ promtail_version }}"
+    creates: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
+    mode: 0755
+    remote_src: True
 
 - name: Create symlink to latest version
   notify:

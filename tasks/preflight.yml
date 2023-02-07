@@ -25,8 +25,13 @@
         promtail_version: "{{ _latest_release.json.tag_name[1:] }}"
   when:
     - promtail_version == "latest"
-    - promtail_binary_local_dir | length == 0
-    - not promtail_skip_install
+
+- name: Test if zip local archive exists
+  stat:
+    path: "{{ promtail_binary_local_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+  register: promtail_binary_local_archive
+  delegate_to: localhost
+  run_once: true
 
 - block:
     - name: "Get checksum list"
@@ -42,4 +47,4 @@
         - "('promtail-linux-' + go_arch + '.zip') in item"
   when:
     - promtail_binary_local_dir | length == 0
-    - not promtail_skip_install
+    - not promtail_binary_local_archive.stat.exists
