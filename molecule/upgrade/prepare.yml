@@ -1,0 +1,10 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Ensure that net-tools is available
+      package:
+        name: net-tools
+        state: present
+      when: ansible_os_family == 'RedHat'

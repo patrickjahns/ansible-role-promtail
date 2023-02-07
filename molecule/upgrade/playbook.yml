@@ -1,0 +1,6 @@
+---
+- hosts: all
+  any_errors_fatal: true
+  roles:
+    - role: ansible-role-promtail-previous
+    - role: ansible-role-promtail
