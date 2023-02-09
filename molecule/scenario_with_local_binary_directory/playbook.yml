@@ -5,5 +5,5 @@
   roles:
     - role: ansible-role-promtail
       vars:
-        promtail_version: "2.5.0"
-        promtail_binary_local_dir: "${PATH}"
+        promtail_version: "2.7.3"
+        promtail_binary_local_dir: "/tmp"
