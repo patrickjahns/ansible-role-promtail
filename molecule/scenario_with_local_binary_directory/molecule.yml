@@ -10,9 +10,13 @@ lint: |
 
 platforms:
   - name: instance
-    image: quay.io/centos/centos:stream8
-    command: /sbin/init
-    privileged: True
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    cgroupns_mode: host
+    pre_build_image: true
 
 provisioner:
   name: ansible
