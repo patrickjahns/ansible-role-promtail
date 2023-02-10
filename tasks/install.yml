@@ -67,7 +67,7 @@
     - not promtail_binary.stat.exists
     - promtail_binary_local_dir | length == 0
 
-- name: propagate locally distributed promtail archive
+- name: Propagate locally distributed promtail archive
   copy:
     src: "{{ promtail_binary_local_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
     dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
