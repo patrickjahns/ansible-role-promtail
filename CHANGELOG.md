@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.22.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.22.0) (2023-02-10)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.21.0...1.22.0)
+
+**Implemented enhancements:**
+
+- feat: add var promtail\_binary\_local\_dir  [\#104](https://github.com/patrickjahns/ansible-role-promtail/pull/104) ([OuiSouss](https://github.com/OuiSouss))
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency setuptools to v67.2.0 [\#156](https://github.com/patrickjahns/ansible-role-promtail/pull/156) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.21.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.21.0) (2023-02-01)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.20.0...1.21.0)
