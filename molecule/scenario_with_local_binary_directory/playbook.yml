@@ -1,0 +1,9 @@
+---
+- hosts: all
+  any_errors_fatal: true
+  #become: true
+  roles:
+    - role: ansible-role-promtail
+      vars:
+        promtail_version: "2.7.3"
+        promtail_binary_local_dir: "/tmp"

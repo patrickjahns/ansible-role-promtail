@@ -63,7 +63,20 @@
     dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
     force: True
     checksum: "{{ promtail_custom_checksum if promtail_custom_checksum else 'sha256:' + __promtail_checksum }}"
-  when: not promtail_binary.stat.exists
+  when:
+    - not promtail_binary.stat.exists
+    - promtail_binary_local_dir | length == 0
+
+- name: Propagate locally distributed promtail archive
+  copy:
+    src: "{{ promtail_binary_local_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    mode: 0755
+    owner: root
+    group: root
+  when:
+    - not promtail_binary.stat.exists
+    - promtail_binary_local_dir | length > 0
 
 - name: Unpack promtail binaries
   ignore_errors: "{{ ansible_check_mode }}"
