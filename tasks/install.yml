@@ -87,7 +87,7 @@
     force: True
     checksum: "{{ promtail_custom_checksum if promtail_custom_checksum else 'sha256:' + __promtail_checksum }}"
   delegate_to: localhost
-  run_once: true
+  run_once: True
   when: promtail_binary_propogate
 
 - name: Propagate promtail binaries
