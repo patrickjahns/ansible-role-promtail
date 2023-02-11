@@ -96,7 +96,6 @@
     - not promtail_binary.stat.exists
     - promtail_binary_local_dir | length > 0
 
-
 - name: Unpack promtail binaries
   ignore_errors: "{{ ansible_check_mode }}"
   unarchive:
