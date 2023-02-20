@@ -25,6 +25,8 @@
         promtail_version: "{{ _latest_release.json.tag_name[1:] }}"
   when:
     - promtail_version == "latest"
+  delegate_to: localhost
+  run_once: True
 
 - block:
   - name: Test if zip local archive exists
