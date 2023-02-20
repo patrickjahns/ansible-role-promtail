@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.22.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.22.1) (2023-02-20)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.22.0...1.22.1)
+
+**Fixed bugs:**
+
+- Revert back to fetching of version information from localhost [\#162](https://github.com/patrickjahns/ansible-role-promtail/pull/162) ([mprasil](https://github.com/mprasil))
+
+**Closed issues:**
+
+- latest Tag: failing at downloading SHA256SUMS [\#76](https://github.com/patrickjahns/ansible-role-promtail/issues/76)
+- \[Discussion\] Add loki installation mechanism \(opt-in, additional to promtail\) [\#58](https://github.com/patrickjahns/ansible-role-promtail/issues/58)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency setuptools to v67.3.2 [\#161](https://github.com/patrickjahns/ansible-role-promtail/pull/161) ([renovate[bot]](https://github.com/apps/renovate))
+- fix: fail early when using promtail\_binary\_local\_dir [\#158](https://github.com/patrickjahns/ansible-role-promtail/pull/158) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.22.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.22.0) (2023-02-10)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.21.0...1.22.0)
