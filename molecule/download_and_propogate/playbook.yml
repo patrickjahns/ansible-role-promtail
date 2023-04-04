@@ -5,4 +5,4 @@
   roles:
     - role: ansible-role-promtail
       vars:
-        promtail_binary_propogate: True
+        promtail_binary_propagate: True
