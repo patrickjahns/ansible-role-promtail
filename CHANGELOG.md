@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.22.3](https://github.com/patrickjahns/ansible-role-promtail/tree/1.22.3) (2023-03-31)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.22.2...1.22.3)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency grafana/loki to v2.7.5 [\#168](https://github.com/patrickjahns/ansible-role-promtail/pull/168) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.22.2](https://github.com/patrickjahns/ansible-role-promtail/tree/1.22.2) (2023-02-25)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.22.1...1.22.2)
