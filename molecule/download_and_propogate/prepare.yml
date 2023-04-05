@@ -2,15 +2,6 @@
 - name: Prepare
   hosts: all
   gather_facts: true
-  vars:
-    promtail_version: "2.7.3"
-    go_arch_map:
-      x86_64: 'amd64'
-      aarch64: 'arm64'
-      armv7l: 'arm'
-      armv6l: 'arm'
-    go_arch: "{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}"
-  
   tasks:
     - name: Ensure that net-tools is available
       package:
