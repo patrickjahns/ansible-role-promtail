@@ -15,6 +15,7 @@ promtail_systemd_service_template_file: service.j2
 promtail_systemd_service: promtail
 
 promtail_binary_local_dir: ""
+promtail_binary_propagate: False
 
 promtail_install_dir: /opt/promtail
 promtail_tmp_dir: /tmp

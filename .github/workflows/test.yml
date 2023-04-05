@@ -39,6 +39,8 @@ jobs:
           - ANSIBLE: "6.6"
             MOLECULE_SCENARIO: scenario_with_local_binary_directory
           - ANSIBLE: "6.6"
+            MOLECULE_SCENARIO: download_and_propagate
+          - ANSIBLE: "6.6"
             MOLECULE_SCENARIO: default
             MOLECULE_DISTRO: ubuntu2004
           - ANSIBLE: "6.6"

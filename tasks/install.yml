@@ -66,6 +66,7 @@
   when:
     - not promtail_binary.stat.exists
     - promtail_binary_local_dir | length == 0
+    - not promtail_binary_propagate
 
 - name: Propagate locally distributed promtail archive
   copy:
@@ -77,6 +78,24 @@
   when:
     - not promtail_binary.stat.exists
     - promtail_binary_local_dir | length > 0
+    - not promtail_binary_propagate
+
+- name: Download promtail binaries to controller node
+  get_url:
+    url: "{{ promtail_dist_url }}"
+    dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    force: True
+    checksum: "{{ promtail_custom_checksum if promtail_custom_checksum else 'sha256:' + __promtail_checksum }}"
+  delegate_to: localhost
+  run_once: True
+  when: promtail_binary_propagate
+
+- name: Propagate promtail binaries
+  copy:
+    src: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    dest: "{{ promtail_tmp_dir }}/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+    mode: 0755
+  when: promtail_binary_propagate
 
 - name: Unpack promtail binaries
   ignore_errors: "{{ ansible_check_mode }}"
