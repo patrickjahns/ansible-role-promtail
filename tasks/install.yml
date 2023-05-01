@@ -125,6 +125,7 @@
     owner: root
     group: "{{ promtail_system_group }}"
     mode: 0644
+    validate: /usr/local/bin/promtail -config.file %s -check-syntax
 
 - name: Create systemd service unit
   notify:
