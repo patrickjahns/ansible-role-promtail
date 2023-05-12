@@ -25,6 +25,7 @@ jobs:
     if: "contains(github.event.head_commit.message, '[RELEASE]')"
     steps:
       - uses: actions/checkout@master
+
       - name: extract version from commit message
         shell: bash
         run: |
@@ -34,17 +35,20 @@ jobs:
           CHANGELOG="${CHANGELOG//'%'/'%25'}"
           CHANGELOG="${CHANGELOG//$'\n'/'%0A'}"
           CHANGELOG="${CHANGELOG//$'\r'/'%0D'}"
-          echo "::set-output name=version::${VERSION}"
-          echo "::set-output name=changelog::${CHANGELOG}"
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "changelog=${CHANGELOG}" >> $GITHUB_OUTPUT
         env:
           COMMIT_MSG: ${{ github.event.head_commit.message }}
         id: version
-      - uses: avakar/tag-and-release@v1
-        with:
-          body: ${{ steps.version.outputs.changelog }}
-          tag_name: ${{ steps.version.outputs.version }}
+
+      - name: create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_NOTES: ${{ steps.version.outputs.changelog }}
+          RELEASE_TAG: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "${GITHUB_TOKEN}" -n "${RELEASE_NOTES}
+
       - name: galaxy
         uses: robertdebock/galaxy-action@1.2.1
         with:
