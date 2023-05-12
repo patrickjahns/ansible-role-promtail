@@ -1,6 +1,7 @@
 docker
 molecule==4.0.4
 molecule-docker==2.1.0
+ansible-compat<=4.0.0
 pytest-testinfra
 flake8
-setuptools==67.3.2
+setuptools==65.6.3
