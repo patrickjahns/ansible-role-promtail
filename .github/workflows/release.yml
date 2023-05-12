@@ -44,10 +44,11 @@ jobs:
       - name: create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_NOTES: ${{ steps.version.outputs.changelog }}
           RELEASE_TAG: ${{ steps.version.outputs.version }}
+          RELASE_NOTES: ${{ steps.version.outputs.changelog }}
         run: |
-          gh release create "${GITHUB_TOKEN}" -n "${RELEASE_NOTES}
+          RELASE_NOTES="${RELASE_NOTES//$'%0A'/'\n'}"
+          echo -e $RELASE_NOTES | gh release create "${RELEASE_TAG}" --title "${RELEASE_TAG}" --notes-file -
 
       - name: galaxy
         uses: robertdebock/galaxy-action@1.2.1
