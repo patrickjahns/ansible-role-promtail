@@ -24,3 +24,8 @@ scrape_configs:
 target_config:
   {{ promtail_target_config | to_nice_yaml(indent=2) | indent(2, False) }}
 {% endif %}
+
+{% if promtail_limits_config != {} %}
+limits_config:
+  {{ promtail_limits_config | to_nice_yaml(indent=2) | indent(2, False) }}
+{% endif %}
