@@ -11,6 +11,7 @@
       armv7l: 'arm'
       armv6l: 'arm'
     go_arch: "{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}"
+    os: "{{ ansible_system | lower }}"
   
   tasks:
     - name: Ensure that net-tools is available
@@ -20,7 +21,7 @@
       when: ansible_os_family == 'RedHat'
     - name: Download zip archive on controler
       get_url:
-        url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-{{ go_arch }}.zip"
-        dest: "/tmp/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+        url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-{{ os }}-{{ go_arch }}.zip"
+        dest: "/tmp/{{ promtail_version }}_promtail-{{ os }}-{{ go_arch }}.zip"
         force: True
       delegate_to: localhost
