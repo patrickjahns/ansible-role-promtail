@@ -1,7 +1,7 @@
 ---
 promtail_apt_update_cache: True
 promtail_version: "3.0.0"
-promtail_dist_url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-{{ go_arch }}.zip"
+promtail_dist_url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-{{ os }}-{{ go_arch }}.zip"
 promtail_custom_checksum: ""
 promtail_config_dir: /etc/promtail
 promtail_config_file_sd_dir: "{{ promtail_config_dir }}/file_sd"

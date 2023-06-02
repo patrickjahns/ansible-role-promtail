@@ -6,3 +6,4 @@ go_arch_map:
   armv6l: 'arm'
 
 go_arch: "{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}"
+os: "{{ ansible_system | lower }}"

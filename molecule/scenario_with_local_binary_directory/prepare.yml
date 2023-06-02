@@ -20,7 +20,7 @@
       when: ansible_os_family == 'RedHat'
     - name: Download zip archive on controler
       get_url:
-        url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-linux-{{ go_arch }}.zip"
-        dest: "/tmp/{{ promtail_version }}_promtail-linux-{{ go_arch }}.zip"
+        url: "https://github.com/grafana/loki/releases/download/v{{ promtail_version }}/promtail-{{ os }}-{{ go_arch }}.zip"
+        dest: "/tmp/{{ promtail_version }}_promtail-{{ os }}-{{ go_arch }}.zip"
         force: True
       delegate_to: localhost
