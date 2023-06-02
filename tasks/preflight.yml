@@ -1,15 +1,13 @@
 ---
-- name: Assert usage of systemd as an init system
+- name: Assert target OS is supported
   assert:
-    that: ansible_service_mgr == 'systemd'
-    msg: "This module only works with systemd"
-  when: os == 'linux'
+    that: os in service_mgr_support_map.keys()
+    msg: "This module only works with {{ service_mgr_support_map.keys() }}"
 
-- name: Assert usage of launchd as an init system
+- name: Assert usage of one of the supported init systems
   assert:
-    that: ansible_service_mgr == 'launchd'
-    msg: "This module only works with launchd"
-  when: os == 'darwin'
+    that: ansible_service_mgr in service_mgr_support_map[os]
+    msg: "This module only works with {{ service_mgr_support_map[os] }} on {{ os }}"
 
 - block:
     - name: Get latest release

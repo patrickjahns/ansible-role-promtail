@@ -5,5 +5,11 @@ go_arch_map:
   armv7l: 'arm'
   armv6l: 'arm'
 
+service_mgr_support_map:
+  linux:
+    - systemd
+  darwin:
+    - launchd
+
 go_arch: "{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}"
 os: "{{ ansible_system | lower }}"

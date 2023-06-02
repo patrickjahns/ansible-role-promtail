@@ -17,7 +17,7 @@
     name: "{{ promtail_systemd_service }}"
     state: started
     enabled: True
-  when: os == 'linux'
+  when: ansible_service_mgr == 'systemd'
   tags:
     - promtail_run
     - promtail
@@ -28,7 +28,7 @@
     name: "{{ promtail_launchd_service }}"
     state: started
     enabled: True
-  when: os == 'darwin'
+  when: ansible_service_mgr == 'launchd'
   tags:
     - promtail_run
     - promtail
