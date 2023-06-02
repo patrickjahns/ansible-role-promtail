@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd" >
+<plist version='1.0'>
+<dict>
+    <key>Label</key>
+    <string>{{ promtail_launchd_service }}</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/promtail</string>
+        <string>-config.file={{ promtail_config_file }}</string>
+        <string>-log.level={{ promtail_log_level }}</string>
+        <string>-config.expand-env={{ "true" if promtail_config_expand_env else "false" }}</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>

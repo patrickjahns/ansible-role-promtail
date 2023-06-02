@@ -1,10 +1,21 @@
 ---
-- name: Restart promtail
+- name: Restart promtail (systemd)
   become: True
   systemd:
     name: "{{ promtail_systemd_service }}"
     state: restarted
     daemon_reload: True
+  when: os == 'linux'
+  tags:
+    - promtail_run
+    - promtail
+
+- name: Restart promtail (launchd)
+  become: True
+  community.general.launchd:
+    name: "{{ promtail_launchd_service }}"
+    state: restarted
+  when: os == 'darwin'
   tags:
     - promtail_run
     - promtail

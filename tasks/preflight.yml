@@ -3,6 +3,13 @@
   assert:
     that: ansible_service_mgr == 'systemd'
     msg: "This module only works with systemd"
+  when: os == 'linux'
+
+- name: Assert usage of launchd as an init system
+  assert:
+    that: ansible_service_mgr == 'launchd'
+    msg: "This module only works with launchd"
+  when: os == 'darwin'
 
 - block:
     - name: Get latest release

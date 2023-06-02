@@ -10,13 +10,25 @@
     - promtail_install
     - promtail
 
-- name: Ensure promtail service is started and enabled
+- name: Ensure promtail service is started and enabled (systemd)
   become: True
   systemd:
     daemon_reload: True
     name: "{{ promtail_systemd_service }}"
     state: started
     enabled: True
+  when: os == 'linux'
+  tags:
+    - promtail_run
+    - promtail
+
+- name: Ensure promtail service is started and enabled (launchd)
+  become: True
+  community.general.launchd:
+    name: "{{ promtail_launchd_service }}"
+    state: started
+    enabled: True
+  when: os == 'darwin'
   tags:
     - promtail_run
     - promtail

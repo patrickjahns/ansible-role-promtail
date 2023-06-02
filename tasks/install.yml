@@ -1,9 +1,17 @@
 ---
-- name: Ensure unzip package is available
+- name: Ensure unzip package is available (linux)
   package:
     name: unzip
     state: present
     update_cache: "{{ promtail_apt_update_cache }}"
+  when: os == "linux"
+
+- name: Ensure unzip package is available (darwin)
+  package:
+    name: unzip
+    state: present
+  become: False
+  when: os == "darwin"
 
 - name: Create promtail group
   group:
@@ -108,7 +116,8 @@
 
 - name: Create symlink to latest version
   notify:
-    - Restart promtail
+    - Restart promtail (systemd)
+    - Restart promtail (launchd)
   ignore_errors: "{{ ansible_check_mode }}"
   file:
     state: link
@@ -118,7 +127,8 @@
 
 - name: Write config
   notify:
-    - Restart promtail
+    - Restart promtail (systemd)
+    - Restart promtail (launchd)
   template:
     src: config.j2
     dest: "{{ promtail_config_file }}"
@@ -129,8 +139,18 @@
 
 - name: Create systemd service unit
   notify:
-    - Restart promtail
+    - Restart promtail (systemd)
   template:
     src: "{{ promtail_systemd_service_template_file }}"
     dest: "/etc/systemd/system/{{ promtail_systemd_service }}.service"
     mode: 0644
+  when: os == 'linux'
+
+- name: Create launchd service unit
+  notify:
+    - Restart promtail (launchd)
+  template:
+    src: "{{ promtail_launchd_service_template_file }}"
+    dest: /Library/LaunchDaemons/{{ promtail_launchd_service }}.plist
+    mode: 0644
+  when: os == 'darwin'
