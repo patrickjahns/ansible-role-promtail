@@ -11,6 +11,7 @@
       armv7l: 'arm'
       armv6l: 'arm'
     go_arch: "{{ go_arch_map[ansible_architecture] | default(ansible_architecture) }}"
+    os: "{{ ansible_system | lower }}"
   
   tasks:
     - name: Ensure that net-tools is available
