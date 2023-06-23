@@ -1,5 +1,5 @@
 docker
-molecule==4.0.4
+molecule==5.1.0
 molecule-docker==2.1.0
 ansible-compat<=4.0.0
 pytest-testinfra
