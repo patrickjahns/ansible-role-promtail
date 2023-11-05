@@ -17,7 +17,7 @@ scrape_configs:
   {{ promtail_config_default_file_sd_config | to_nice_yaml(indent=2) | indent(2, False) }}
   {% endif %}
   {% if promtail_config_scrape_configs|length %}
-  {{ promtail_config_scrape_configs | to_nice_yaml(indent=2) | indent(2, False) }}
+  {{ promtail_config_scrape_configs | to_nice_yaml(indent=2, width=2147483647) | indent(2, False) }}
   {% endif %}
 
 {% if promtail_target_config != {} %}
