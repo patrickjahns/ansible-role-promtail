@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.28.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.28.0) (2024-02-14)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.27.0...1.28.0)
+
+**Merged pull requests:**
+
+- ci: bump python version to 3.10 [\#208](https://github.com/patrickjahns/ansible-role-promtail/pull/208) ([patrickjahns](https://github.com/patrickjahns))
+- chore\(deps\): update dependency setuptools to v69.1.0 [\#206](https://github.com/patrickjahns/ansible-role-promtail/pull/206) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency grafana/loki to v2.9.4 [\#202](https://github.com/patrickjahns/ansible-role-promtail/pull/202) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/setup-python action to v5 [\#201](https://github.com/patrickjahns/ansible-role-promtail/pull/201) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v69 [\#200](https://github.com/patrickjahns/ansible-role-promtail/pull/200) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.27.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.27.0) (2023-11-05)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.26.0...1.27.0)
