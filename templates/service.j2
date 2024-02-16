@@ -11,7 +11,7 @@ RestartSec=5
 TimeoutSec=5
 User={{ promtail_system_user }}
 Group={{ promtail_system_group }}
-ExecStart=/usr/local/bin/promtail -config.file={{ promtail_config_file }} -log.level={{ promtail_log_level }} -config.expand-env={{ promtail_config_expand_env | lower }}
+ExecStart=/usr/local/bin/promtail -config.file={{ promtail_config_file }} -log.level={{ promtail_log_level }} -config.expand-env={{ promtail_config_expand_env | lower }} {{ promtail_extra_args | join(' ') }}
 
 [Install]
 WantedBy=multi-user.target
