@@ -105,7 +105,8 @@
     creates: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
     mode: 0755
     remote_src: True
-
+  when: not ansible_check_mode
+  
 - name: Create symlink to latest version
   notify:
     - Restart promtail
@@ -115,7 +116,8 @@
     src: "{{ promtail_install_dir }}/{{ promtail_version }}/promtail-linux-{{ go_arch }}"
     dest: /usr/local/bin/promtail
     mode: 0755
-
+  when: not ansible_check_mode
+   
 - name: Write config
   notify:
     - Restart promtail

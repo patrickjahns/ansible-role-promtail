@@ -5,6 +5,7 @@
     name: "{{ promtail_systemd_service }}"
     state: restarted
     daemon_reload: True
+  when: not ansible_check_mode
   tags:
     - promtail_run
     - promtail
