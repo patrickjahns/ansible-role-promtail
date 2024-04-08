@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.29.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.29.0) (2024-04-08)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.28.0...1.29.0)
+
+**Implemented enhancements:**
+
+- Support arbitrary options in the configuration file [\#203](https://github.com/patrickjahns/ansible-role-promtail/issues/203)
+- Add variable \(list\) for additional command line arguments/flags passed to promtail [\#167](https://github.com/patrickjahns/ansible-role-promtail/issues/167)
+- feat: add promtail\_extra\_args variable to allow configuring the service arguments [\#207](https://github.com/patrickjahns/ansible-role-promtail/pull/207) ([sfhl](https://github.com/sfhl))
+
+**Fixed bugs:**
+
+- Automatic publishing to Ansible Galaxy is currently broken [\#199](https://github.com/patrickjahns/ansible-role-promtail/issues/199)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency grafana/loki to v2.9.6 [\#210](https://github.com/patrickjahns/ansible-role-promtail/pull/210) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency setuptools to v69.2.0 [\#209](https://github.com/patrickjahns/ansible-role-promtail/pull/209) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [1.28.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.28.0) (2024-02-14)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.27.0...1.28.0)
