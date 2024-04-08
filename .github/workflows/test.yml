@@ -32,33 +32,37 @@ jobs:
             MOLECULE_SCENARIO: default
           - ANSIBLE: "5.10"
             MOLECULE_SCENARIO: default
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "6.7"
+            MOLECULE_SCENARIO: default
+          - ANSIBLE: "7.7"
+            MOLECULE_SCENARIO: default
+          - ANSIBLE: "8.7"
+            MOLECULE_SCENARIO: default
+          - ANSIBLE: "9.4"
             MOLECULE_SCENARIO: latest
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "9.4"
             MOLECULE_SCENARIO: upgrade
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "9.4"
             MOLECULE_SCENARIO: scenario_with_local_binary_directory
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "9.4"
             MOLECULE_SCENARIO: download_and_propagate
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "9.4"
             MOLECULE_SCENARIO: default
             MOLECULE_DISTRO: ubuntu2004
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "9.4"
             MOLECULE_SCENARIO: default
             MOLECULE_DISTRO: ubuntu2204
-          - ANSIBLE: "6.6"
-            MOLECULE_SCENARIO: default
-            MOLECULE_DISTRO: debian10
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "9.4"
             MOLECULE_SCENARIO: default
             MOLECULE_DISTRO: debian11
-#          - ANSIBLE: "4.3"
-#            MOLECULE_DISTRO: centos7
-          - ANSIBLE: "6.6"
+          - ANSIBLE: "9.4"
+            MOLECULE_SCENARIO: default
+            MOLECULE_DISTRO: debian12
+          - ANSIBLE: "9.4"
             MOLECULE_DISTRO: centos8
             MOLECULE_SCENARIO: default
-          - ANSIBLE: "6.6"
-            MOLECULE_DISTRO: fedora37
+          - ANSIBLE: "9.4"
+            MOLECULE_DISTRO: fedora39
             MOLECULE_SCENARIO: default
     steps:
       - uses: actions/checkout@v4
