@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.29.1](https://github.com/patrickjahns/ansible-role-promtail/tree/1.29.1) (2024-04-24)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.29.0...1.29.1)
+
+**Merged pull requests:**
+
+- chore\(deps\): update dependency grafana/loki to v2.9.7 [\#216](https://github.com/patrickjahns/ansible-role-promtail/pull/216) ([renovate[bot]](https://github.com/apps/renovate))
+- ci: bumped ansible test versions and base os versions [\#214](https://github.com/patrickjahns/ansible-role-promtail/pull/214) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.29.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.29.0) (2024-04-08)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.28.0...1.29.0)
