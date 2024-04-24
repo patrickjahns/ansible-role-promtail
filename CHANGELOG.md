@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.31.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.31.0) (2024-04-24)
+
+[Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.30.0...1.31.0)
+
+**Implemented enhancements:**
+
+- validate templated promtail config file [\#221](https://github.com/patrickjahns/ansible-role-promtail/pull/221) ([patrickjahns](https://github.com/patrickjahns))
+
 ## [1.30.0](https://github.com/patrickjahns/ansible-role-promtail/tree/1.30.0) (2024-04-24)
 
 [Full Changelog](https://github.com/patrickjahns/ansible-role-promtail/compare/1.29.1...1.30.0)
