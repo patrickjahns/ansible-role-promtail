@@ -134,3 +134,13 @@
     src: "{{ promtail_systemd_service_template_file }}"
     dest: "/etc/systemd/system/{{ promtail_systemd_service }}.service"
     mode: 0644
+
+- name: Grant promtail read access to configured paths
+  acl:
+    path: "{{ item }}"
+    entity: "{{ promtail_system_user }}"
+    etype: user
+    permissions: rX
+    recursive: yes
+    state: present
+  with_items: "{{ promtail_acl_read_paths }}"

@@ -58,6 +58,8 @@ promtail_config_default_file_sd_config:
           - "{{ promtail_config_file_sd_dir }}/*.yaml"
           - "{{ promtail_config_file_sd_dir }}/*.json"
 
+promtail_acl_read_paths: []
+
 promtail_target_config: {}
 #  promtail_target_config:
 #    sync_period: "10s"
