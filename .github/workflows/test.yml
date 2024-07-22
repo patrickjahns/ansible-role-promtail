@@ -59,10 +59,7 @@ jobs:
             MOLECULE_SCENARIO: default
             MOLECULE_DISTRO: debian12
           - ANSIBLE: "9.4"
-            MOLECULE_DISTRO: centos8
-            MOLECULE_SCENARIO: default
-          - ANSIBLE: "9.4"
-            MOLECULE_DISTRO: fedora39
+            MOLECULE_DISTRO: fedora40
             MOLECULE_SCENARIO: default
     steps:
       - uses: actions/checkout@v4
